@@ -6,12 +6,12 @@
 
 %%% For print copies
 %% set 'singlespace' option to set entire thesis to single space, and define "\printmode" to remove all hyperlinks for printed copies of the thesis. Delete all output files before changing this mode -- it will turn hyperref package on and off
-%\documentclass[12pt,lot, lof, singlespace]{puthesis}
-%\newcommand{\printmode}{}
+\documentclass[12pt,lot, lof, singlespace]{puthesis}
+\newcommand{\printmode}{}
 
 %%% For the electronic copy, use doublespacing, define "\proquestmode" to use outlined links, instead of colored links. 
-\documentclass[12pt,lot, lof]{puthesis}
-\newcommand{\proquestmode}{}
+%\documentclass[12pt,lot, lof]{puthesis}
+%\newcommand{\proquestmode}{}
 % I prefer proquestmode to be off for electronic copies for normal use, since the colored links are less distracting. However when printed in black and white, the colored links are difficult to read. 
 
 %%% For early drafts without some of the frontmatter
@@ -81,7 +81,28 @@
 % default caption width is 4in for longtable, but wider for normal tables
 \setlength{\LTcapwidth}{\textwidth}
 
+% Sean packages
+\usepackage{outlines} % outlines for organization
+\usepackage{color} % for coloring of text
+\usepackage{amsmath}
+\usepackage{multirow}
+\usepackage{outlines}
+\usepackage{xfrac}
+\usepackage{relsize} % for scaling parts of equations. e.g. \mathlarger
+\usepackage{hyperref}
+\usepackage{rotating}
+\usepackage{array} 
+\usepackage[none]{hyphenat}
+\usepackage{xr} % so that names figures can be appropriately updated
+\usepackage{booktabs}
+\usepackage[ruled,vlined]{algorithm2e} % for pseudo-code
+\usepackage{xcite} % to use bibliography from main MS
+\usepackage{mathtools} %left adjust matrices 
+\usepackage{etoolbox}
+\usepackage{amsfonts}
+\usepackage{subfig}
 
+\setlength{\parskip}{2mm}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% Printed vs. online formatting
@@ -173,7 +194,8 @@
 %%%% Front-matter
 
 % For early drafts, you may want to disable some of the frontmatter. Simply change this to "\ifodd 1" to do so.
-\ifodd 0
+%\ifodd 0
+\ifodd 1
 % front-matter disabled while writing chapters
 \renewcommand{\maketitlepage}{}
 \renewcommand*{\makecopyrightpage}{}
@@ -203,7 +225,8 @@
 %%%% Hide some chapters
 
 %%% If you want to produce a pdf that includes only certain chapters, specify them with includeonly, in addition to including all chapters below.
-%\includeonly{ch-intro/chapter-intro}
+%\includeonly{ch-quant_anal/quant_analysis, ch-intro/chapter-intro}
+\includeonly{ch-quant_anal/quant_analysis}
 %%% You can also specify multiple chapters.
 %\includeonly{ch-intro/chapter-intro,ch-usage/chapter-usage}
 %\includeonly{chap1,chap2,chap3}
@@ -229,7 +252,8 @@
 
 % \include lets us split up the document (and each include starts a new page):
 \include{ch-intro/chapter-intro}
-\include{ch-pastwork/chapter-pastwork}
+\include{ch-quant_anal/quant_analysis}
+\include{ch-slimer/rOCA}
 \include{ch-usage/chapter-usage}
 \include{ch-conclusion/chapter-conclusion}
 \appendix % all chapters following will be labeled as appendices
@@ -250,7 +274,7 @@
 \addcontentsline{toc}{chapter}{Bibliography}
 
 % include your .bib file
-\bibliography{thesis}
+\bibliography{ROCAbiblio}
 
 \end{document}
 

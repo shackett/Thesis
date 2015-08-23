@@ -1,8 +1,41 @@
 
 \chapter{Introduction\label{ch:intro}}
 
-This documentclass, \texttt{puthesis.cls}, is setup for a Ph.D. dissertation for Princeton University. The Mudd Library website~\cite{mudd2009} provides detailed specifications for how to format your disseration~\cite{muddthesis2009}. Please review those documents, as the requirements may have changed since this template was created. Also, review the ProQuest Dissertation Guide~\cite{proquest2006}, which has additional formatting rules that are important for the submission of the electronic copy of your dissertation.
+What will it take to understand the chain of genetic and environmental events leading to a heart attack? Consider the alternative fates of John and Jane Doe.  Neither John, nor Jane, is the paragon of health; both eat a similar, relatively balanced diet, and exercise once a week.  While John's and Jane's livers experience a similar supply of nutrients and comparable metabolic demands, their individual cocktail of genetic variants affects how this nutrient supply is used.  John's metabolism favors the synthesis of fat, which is partially deposited in his arteries leading to athlerschlerosis and ultimately an unfortunately placed embolism.  Jane's metabolism favors shunting excess energy to her muscles to innocuously fuel her hyperactivity.
 
-This template includes many details about the requirements and common practices for writing, printing, and submitting your dissertation. However, this is \textbf{NOT} an official document. It was written by Jeffrey Dwoskin and is current as of May 2010 based on requirements for the Electrical Engineering department, but the requirements may have changed. Please verify all information, deadlines, costs, requirements, and formatting rules with the Mudd Library website~\cite{mudd2009}, with the Graduate School, and with your department.
+If the alternative fates of John and Jane were set in motion by genetic differences in decision making between their livers, then perhaps their differences in heart attack risk could have been prediction and careful monitoring of John would have been warranted.
 
-\input{ch-intro/intro_contributions}
+
+The gulf separating genetic variation and whole-body complex traits is the massive complexity of organismal and cellular physiology.  To optimally relate genetic variation to all of its meaningful organism-level consequences requires first understanding how cellular behavior is shaped by environmental and genetic effects.  Organism-level operation then could be considered as a highly-complicated emergent property of the interaction of component cells. Because organism-level phenotypes are impacted by thousands of genes and environmental effects interacting in a non-linear fashion, it is not surprising that additive effects of genetic variation rarely describes a sizable fraction of heritable phenotypic variation of most human complex traits \textcolor{red}{missing heritability}. Despite this seeming intractability, an experienced doctor can still gauge the risk of heart attack or diabetes using a modest set of chemical and morphological observations.  In this case, complicated phenotypes can be largely described by some relatively small set of possibly unknown variables that can serve as intermediate phenotypes \textcolor{red}{Modeling of intermediate phenotypes - surre}.
+
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[]{ch-intro/Figures/intermediatePhenotypes.pdf}
+\end{center}
+\caption{woot}
+\label{fig:intpheno}
+\end{figure}
+
+
+These intermediate phenotypes, such as blood pressure and blood chemistry, effectively summarize the influence of simpler processes affected by numerous genetic and environmental effects.  If these intermediate phenotypes have been measured, then whole-organism phenotype are rendered conditionally independent of low level variation.  With this perspective, it seems that a rational path towards understanding disease is through data-driven characterization of complicated physiological processes in terms of baser ones. By purpose or chance, this approach falls under the auspices of systems biology, where approaches are continually being sought to break complexity into simpler pieces and to describe relationships using available data.
+
+The bulk of effort in systems biology focuses on understanding the basal layer of organismal complexity; the operation of the cell.  Here, the focus has laid in two related area, first, how regulation establishes levels of functional proteins and second, the functional consequences of protein expression interacting with the environment to carry-out growth, metabolism, signaling, etc.  Approaches to answer these questions generally share several properties: (1), the use of high-dimensional data, e.g. transcriptomics, proteomics, microscopy; (2) attempts to directly or indirectly quantitatively link features.
+
+The use of high-dimensional data, naturally entails the use of appropriate, principled methods, the subject of chapter \ref{ch:quant_anal}. Individual datasets can provide a glance at one aspect of behavior, but they are limited due to an incomplete perspective.  Chapter \textcolor{red}{3} focuses on studying the interface between two datasets to determine the extent to which transcriptional changes propagate into meaningful changes in protein abundance and investigating the nature of their departures.  In chapter \textcolor{red}{4}, I consider the interaction of enzyme regulation and environmental variation in shaping metabolism.
+
+
+\begin{outline}
+\1 High-throughput phenotyping is sufficient to quantify many of the key players
+\2 Which to do ? transcripts, proteins, metabolites, phosphorylation events ..
+\1 Systems biology
+\2 If we have a snap-shot of biology from multiple angles, this seems like a good things, but how can this information be used intelligently
+\2 Bottom-up modeling of the phenotypic covariation
+\3 Result is correlated with the source
+\3 Generally when many species are considered, this is not sufficient because  
+\2 The space of possible interactions is huge
+\3 Unless we have a preponderance of data, we must rationally lay our data onto the scaffold of existing knowledge
+\1 genetic variation in metabolism
+\1 Metabolism is relatively robust to variation
+\end{outline}
+
+

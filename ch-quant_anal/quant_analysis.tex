@@ -1,0 +1,172 @@
+
+\chapter{Statistical Analysis of Mass Spectrometry Data\label{ch:quant_anal}}
+
+Mass spectrometry is a powerful way to detect and quantify chemically heterogenous species, particularly metabolites and peptides derived from proteins. Species are distinguished and quantified by exploiting the fact that when placed in a constant electric or magnetic field, ions with the different mass-to-charge ratio (\sfrac{m}{z}) will accelerate at different rates.  Ions that move at different rates can then be quantified by detecting the frequency of their  about an orbitrap or based on differences in their time-of-flight.  Because multiple chemical species can have very similar, or identical, \sfrac{m}{z} and thus cannot be resolved by mass spectrometry, further discrimination of species is possible by using liquid or gas chromatography.  When chromatography is utilized, species are further separated based on retention time (RT), resulting from differential affinity for the chromatography column/solvent, and thus different suites of species will reach the detector in each time slice.  Quantitatively, a single LC-MS run effectively yields a matrix of \sfrac{m}{z} x RT where values are the number of ions detected.  
+
+To effectively use mass spectrometry data, each ion must first be identified. To determine the identity of ions corresponding to mass spectrometry peaks, emerging out of the \sfrac{m}{z} x RT plane, two primary approaches are used.  When studying metabolites, most species of interest, such as amino acids and metabolites in glycolysis, are shared between species and pure standards can be acquired.  By subjecting purified standards to LC- or GC-MS, the characteristic retention time of these species can be found, allowing the identification of ions in subsequent experiments based on shared retention time and exact mass of standards.  When obtaining pure standards of the species of interest is not feasible, such as when many peptides are measured, tandem-mass spectrometry can be used to yield structural information of unknown ions.  Once a subset of the detected ions have been identified as metabolites or peptides, the abundances of these meaningful species can be compared to determine how experimental samples differ.
+
+To illustrate the challenges and opportunities in using mass spectrometry data, in this chapter I will first discuss parametric models of ion abundance, focusing on the mean-variance relationship. I will then briefly discuss four studies that I have coauthored that utilized either proteomics or metabolomics to provide insights into native physiology or metabolism.
+
+\section{Statistical properties of Mass Spectrometry Data}
+
+Despite its widespread use, there are few established conventions for the analysis of mass spectrometry data.  
+
+
+
+
+
+\section{Analysis of Mass Spectrometry Data}
+
+Because metabolite and proteins are the central drivers of metabolism and physiology, mass spectrometry data, when appropriately analyzed, can provide powerful insights into cellular function.  To illustrate this power, I will discuss several published studies that I have coathored, where I will focus on my contributions towards data analysis. Partially owing to the analysis of human pancreatic tumor metabolites, Commisso et al. 2013 and Kamporst et al. 2015, highlight the discovery of a novel way in which tumor acquire nutrient \cite{Commisso:2013hz, Kamphorst:2015cc}.  In Bruenig et al. 2014, the relationship between segregating genetic variation and metabolite concentrations is investigated, revealing both genetic variants that perturb local metabolite concentrations and those with far reaching effects on metabolite concentrations and flux \cite{Breunig:2014bu}.  In Mathew et al. 2014, proteomics is used to identify classes of proteins which are specifically degraded or spared during autophagy \cite{Mathew:2014hz}.
+
+
+\subsection{Identifying a Metabolomic Signature of Protein Eating in Pancreatic Tumors}
+
+As part of the Stand Up to Cancer (SU2C) Pancreatic Cancer Dream-team, a coalition spanning clinician and genomics researchers, the Rabinowitz lab was tasked with determining how pancreatic tumors metabolically differ from normal pancreatic tissue.  It is increasingly apparent that metabolic transformations, such as aerobic glycolysis (i.e. the Warburg effect), are a cardinal feature of cancer progression \cite{VanderHeiden:2009gq, Hanahan:2011gu}.  Most of these changes entail an excess consumption of nutrients and a resulting increased production of waste products such as lactate and reactive oxygen species.  While higher rates of nutrient utilization do not necessitate a change a corresponding change in metabolite concentrations, growth-limiting metabolites tend to be depleted in culture, while ``overflow'' metabolites tend to accumulate, yielding patterns that could be detected through metabolomics \cite{Boer:2010fb}.
+
+From 49 human pancreatic ductal adenocarcinoma patients (PDAC), paired tumor and adjacent benign pancreatic tissue samples were obtained that had been frozen in liquid nitrogen following surgical resection.  A total of 189 samples were analyzed, including at one sample from each tumor and benign specimen and a hodgepodge of technical and biological replicates.  Metabolites from each sample were analyzed using three LC-MS methods geared towards the quantification of partially overlapping sets of compounds. Across all three methods, 127 distinct metabolites were detected from a total of 188 measurements.  To properly analyze this dataset and extract meaningful differences between tumor and benign tissue entailed controlling for between individual variation, differences in total signal of mass spectrometry runs and integrating data from multiple measurements of a single metabolite into a consensus signal. The full quantitative analysis of this dataset is available on \href{https://github.com/shackett/Pancreatic_tumor_metabolomics}{github}.
+
+\subsubsection{Data normalization and processing}
+
+Ion counts were normalized to correct for differences in total metabolite abundances across samples, and for any sample-to-sample drift in the overall instrument response factor.  A normalization factor ($\gamma_{i}$) was calculated for each LC-MS run \textit{i}.  To calculate $\gamma_{i}$, every known metabolite peak P$_{mi}$ in LC-MS run \textit{i} was quantified, and compared to the median value of peak \textit{m} across all samples, $\mu_{m}$.  The scaling factor was calculated according to equation \ref{normal}, and ion counts were then corrected by P$^{*}_{mi}$ = $\frac{P_{mi}}{\gamma_{i}}$.
+
+\begin{equation}
+\gamma_{i} = \text{median}(\frac{P_{mi}}{\mu_{m}})
+\label{normal}
+\end{equation}
+
+The normalized ion count matrix was log$_{2}$ transformed and averaged over replicates.  The similarity of pairs of un-normalized and normalized technical replicates is shown in figures \ref{replicate_corr}A and \ref{replicate_corr}B respectively.  As the average signal strength was not of primary importance, metabolite relative abundances were centered with respect to the row mean.  When a metabolite was measured on multiple instruments, a single abundance value was calculated by taking the mean of non-missing observations across all instruments.
+
+\begin{figure}[h!]
+\begin{center}
+\subfloat{
+\includegraphics[width=0.47\textwidth]{ch-quant_anal/Figures/bioRepCorr_unnorm.pdf}
+}
+\hspace{1mm}
+\subfloat{
+\includegraphics[width=0.47\textwidth]{ch-quant_anal/Figures/bioRepCorr_norm.pdf}
+}
+
+\caption[Comparison of the log$_{2}$ abundances of un-normalized ion counts for pairs of technical replicates]{Comparison of the log$_{2}$ abundances of un-normalized ion counts for pairs of technical replicates.  A: Before normalization. B: After normalization}
+\label{ch-quant_anal:replicate_corr}
+\end{center}
+\end{figure}
+
+\subsubsection{Quantifying the significance of tumor:normal differences:}
+
+To determine whether shared similarities between tumor samples were driving overall metabolite abundances, all 49 tumor and benign samples were grouped using hierarchical clustering (Figure \ref{quant_anal:all_sample_heatmap}). From this analysis, it is clear that the grouping of samples is primarily driven by person-to-person differences in metabolite abundance.  This extensive biological variance should not be surprising as people differ greatly and both tumor and benign samples share common, strong   metabolic effects related to diet, circulating metabolite levels and body composition.  In addition, because each tumor and benign pair was analyzed on the same day, these samples may share technical variation.  Since, we are primarily interested in how tumor metabolism specifically perturbs normal metabolite levels, person-to-person variability and technical variation can largely be controlled, by only focusing on the difference in metabolite relative abundance between paired tumor and benign samples. 
+
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=1\textwidth]{ch-quant_anal/Figures/total_heatmap_colun.pdf}
+\caption[Heatmap assessing the relative impact of tumor biology and person-to-person variability on metabolite abundances.]{Heatmap assessing the relative impact of tumor biology and person-to-person variability on metabolite abundances.  Tumor and benign samples are indicated above the heatmap.  Rows and columns were organized through hierarchical clustering using pearson correlation as a distance metric and using average linkage.}
+\label{ch-quant_anal:all_sample_heatmap}
+\end{center}
+\end{figure}
+
+To determine whether a subset of metabolites are systematically higher or lower in cancerous than in benign adjacent pancreatic tissue, p-values were computed using a paired t-test with the null distribution generated by bootstrapping\cite{Efron:1986cv}.  This method was chosen over determining the test significance against a t distribution, because the parametric t distribution approach makes the assumption that the normal and tumor log-abundances are each normally distributed.  This assumption is not valid for many metabolites and would result in anti-conservative hypothesis testing if errantly invoked\cite{Schmoyeri:1996uh}.
+
+For a given metabolite \textit{m}, with \textit{n} non-missing values, there will be \textit{n} measurements of normal-tissue metabolite abundance N$_{mi}$ paired with \textit{n} measurements of tumor abundances T$_{mi}$, from the same patients.  These abundances, [N$_{mi}$, T$_{mi}$], were jointly standardized so that they collectively have a mean of 0 and a standard deviation of 1.  
+
+The systematic difference between pairs can be captured by a paired t-test statistic (eq. \ref{ch-quant_anal:ttest}). \vspace{3mm}
+\begin{align}
+t_{m} = \frac{\sum_{i = 1}^{n}\frac{(N_{mi} - T_{mi})}{n}}{\sqrt{\frac{\sum_{i = 1}^{n}\frac{(N_{mi} - T_{mi})^{2}}{n-1}}{n}}}\label{ch-quant_anal:ttest}
+\end{align}
+
+To generate samples for an empirical null distribution, we need to generate data where the systematic variation between the tumor and normal samples has been removed and then use the remaining variation to determine how often we would have seen such a large systematic difference between tumor and normal samples (t$_{m}$) by chance.  To generate this null data: the paired difference was removed from the normal abundances (\ref{ch-quant_anal:residvar-1}), the modified tumor and normal abundances were re-centered (\ref{ch-quant_anal:residvar-2}), and then these residuals were inflated (\ref{ch-quant_anal:residvar-3}), in order to account for the 1 degree of freedom eliminated by removing the paired difference.
+
+\begin{subequations}
+\begin{align}
+N^{*}_{mi} &= N_{mi} - \frac{\sum_{i = 1}^{n}(N_{mi} - T_{mi})}{n}\label{ch-quant_anal:residvar-1}\\
+C_{m} &= \text{mean}[N^{*}_{mi}, T_{mi}]\label{ch-quant_anal:residvar-2}\\
+N^{r}_{mi} &= (N^{*}_{mi} - C_{m})\sqrt{\frac{n}{n - 1}}\notag\\
+T^{r}_{mi} &= (T_{mi} - C_{m})\sqrt{\frac{n}{n - 1}}\label{ch-quant_anal:residvar-3}
+\end{align}
+\end{subequations}
+
+
+To generate each bootstrap sample (R = 500,000 in this study), a vector of indices of length n was sampled with replacement from [1...n], and these indices were used to choose pairs of residuals from N$^{r}_{mi}$ and T$^{r}_{mi}$: N$^{bs}_{mi}$ and T$^{bs}_{mi}$.  A bootstrapped null test statistic can then be calculated from equation \ref{ch-quant_anal:bs}.
+\begin{equation}
+t^{bs}_{mr} = \frac{\sum_{i = 1}^{n}\frac{(N^{bs}_{mi} - T^{bs}_{mi})}{n}}{\sqrt{\frac{\sum_{i = 1}^{n}\frac{(N^{bs}_{mi} - T^{bs}_{mi})^{2}}{n-1}}{n}}}\label{ch-quant_anal:bs}
+\end{equation}
+
+This bootstrapped null distribution of statistics t$^{bs}_{mR}$ can be compared to the test statistic \textit{t}$_{m}$ to generate a p-value (\textit{p}$_{m}$) for each metabolite using equation \ref{ch-quant_anal:bspval}. Correction for multiple hypothesis testing followed the procedure of Storey and Tibshirani, 2003 \cite{Storey:2003cj}.
+
+\begin{equation}
+p_{m} = 1 - \frac{\sum_{r}^{R}|t_{m}| > |t_{mr}^{bs}|}{R}\label{ch-quant_anal:bspval}
+\end{equation}
+
+\subsubsection{A metabolomic signature of protein eating in pancreatic tumors}
+
+Overall, the concentrations of 57 metabolites were significantly enriched or depleted in pancreatic cancer tissue relative to adjacent tissue (Figure \ref{ch-quant_anal:tnboxplot}).  In agreement with an increase in tumor glycolytic flux, i.e. the Warburg effect, glucose is specifically depleted in tumors compared to benign tissue, while the fermentative byproduct lactate is enriched.  The behavior of amino acids in tumor samples was far more unexpected.  Our initial expectation was that the rate of protein synthesis in tumors would at least partially be limited by the rate which essential amino acids could be supplied by the circulation, while non-essential amino acids, that can be synthesized \textit{de novo} in the tumor would strongly limit growth. The metabolomics data contradicts this assumption, as non-essential amino acids appear to be partially limit tumor growth, while essential amino acids accumulate. 
+
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=1\textwidth]{ch-quant_anal/Figures/TN_boxplot.pdf}
+\caption[Metabolites accumulated or depleted in pancreatic cancer]{57 metabolites with significantly different levels between tumor and paired benign adjacent tissues (FDR $<$ 0.05). Y-axis is the ratio of metabolite concentrations in the tumor to benign adjacent tissue. Vertical lines represent range, boxes interquartile range, and horizontal lines median across the 49 patients.}
+\label{ch-quant_anal:tnboxplot}
+\end{center}
+\end{figure}
+
+Identifying this discrepancy helped our group identify a novel method by which tumor supplement their growth requirement.  Both in primary tumors and cell culture, tumors activate macropinocytosis, allowing the bulk uptake of extracellular protein that can be broken down to provide extra amino acids beyond what could be acquired from the circulation. As protein catabolism yields amino acids in the ratio found in protein, essential amino acids which can only be used for protein synthesis accumulate, while non-essential amino acids which can be used for other purposes are depleted.  
+
+
+\subsection{Genetic variation affecting metabolite concentrations of yeast}
+
+An important outstanding question in metabolism research is the mechanism by which, and the extent to which, segregating genetic variation impacts population variability in metabolism.  From analysis of resting genetic variation it is clear that central carbon metabolism is under strong purifying selection \cite{Greenberg:2008uy}, suggesting that natural genetic variation impacting enzyme V$_{max}$ is constrained to operate within a relatively narrow range of activities \cite{Greenberg:2008uy}. The functional consequences of excessive or insufficient enzyme activity are generally changes in metabolite pool levels that naturally buffer genetic perturbations \cite{Fendt:2010gr}, provide intrinsic canalisation to the metabolic network. Fitness is compromised when enzyme activity is pushed outside the bounds that can be absorbed by metabolite pools or when an enzyme is inappropriately regulated through either changes in expression or allostery. 
+
+To investigate how genetic variation impacts yeast metabolism, the relative concentration of 74 metabolites were measured using LC-MS for over 100 yeast segregants derived from a cross between a laboratory strain (BY4716) and a vineyard strain (RM11-1a). The parental strains vary at $\sim$ 0.6\% of base pairs and consistent with this extensive variation, BY$\times$RM segregants vary greatly at the level of their transcriptome, proteome and chemical resistances \cite{Brem:2005gh, Foss:2007ej, Bloom:2013bq}. A total of 34 metabolites were associated with at least one quantitative trait locus (QTL); in total 52 QTLs were detected.  These metabolite QTLs (mQTLs) were non-randomly distributed through the genome, but rather were preferentially located near genes in the metabolite's pathway and mQTLs were clustered into eight hotspots where three or more metabolite were linked to a common locus. Six of these mQTL hotspots overlapped previously detected expression QTL and protein QTL hotspots (Figure \ref{ch-quant_anal:qtlHotspots}). Three of these mQTL hotspots were causally linked to one engineered and three genetic variants that differed between BY and RM. 
+
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=1\textwidth]{ch-quant_anal/Figures/allQTLhotspots.pdf}
+\caption[Transcript, protein and metabolite QTL linkages]{The number of metabolite's whose levels are linked to a given region of the genome is shown, along with linkages to transcript and protein levels \ref{Brem:2005gh, Foss:2007ej}. To determine the extent to which species are preferentially linked to one, or a few hotspots, a cutoff for species preferential linkage is shown as a horizontal black line.}
+\label{ch-quant_anal:qtlHotspots}
+\end{center}
+\end{figure}
+
+
+Linking metabolite abundance to genetic heterogeneity across segregants assumes that there is substantial genetic variation affecting metabolite levels in the first place.  Previous estimates of broad-sense heritability \cite{Lynch:1998vx} in \textit{A. thaliana} have suggested moderate heritability of metabolite traits across globally-distributed strains \cite{Keurentjes:2006ik}, while segregants showed substantially lower heritability of metabolite traits than expression traits (an average of 25\% and 65\% respectively) \cite{Rowe:2008ty, West:2006bk}.  To calculate broad-sense heritability, for each metabolite, segregants with two quantifiable biological replicates were isolated and the variance within replicates was compared to the total across all samples.  This is effectively subtracting the environmental variance from the total phenotypic variance to yield the genetic variance.  The ratio of genetic variance to phenotypic variance is the broad sense heritability (equation \ref{heriteq})
+
+\large{
+\begin{align}
+\hat{\sigma^{2}_{s}} &= \frac{\sum_{r = 1}^{2}\left(X_{sr} - \overline{X}_{s}\right)^2}{2} \cdot \frac{2}{2 - 1}\notag\\
+H^{2} &= 1 -  \frac{\sum_{s}^{S}2\hat{\sigma^{2}_{s}}}{\sum_{s}^{S}\sum_{r = 1}^{2}(X_{sr} - \overline{X})^2}\label{heriteq}
+\end{align}
+}
+
+We found extensive heritable variation of metabolite abundance in this study, with an average broad-sense heritability of 62\%.  This indicates that there are likely larger metabolic differences segregating between BY \& RM than within the Bay $\times$ Sha \textit{A. thaliana} cross. Greater levels of heritability across metabolites are associated with an increased number of detected mQTLs (p = 0.014); this is evident in Figure \ref{ch-quant_anal:metHeritability}, which shows linkage numbers as a function of heritability. The association between the number of QTLs found for a metabolite and the metabolite's heritability was found by modeling the number of detected QTLs as an approximately poisson trait and predicting this value using poisson regression. The effects of these QTLs can be seen by determining the fraction of the variance in metabolite abundance that is explained using QTL genotypes (Figure \ref{ch-quant_anal:qtlEffects}).  
+
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=1\textwidth]{ch-quant_anal/Figures/metHeritability.pdf}
+\caption[Distribution of broad sense heritability (H$^{2}$) across measured metabolites]{Distribution of broad sense heritability (H$^{2}$) across measured metabolites. Each circle represents a single metabolite, colored according to how many QTLs are associated with its abundance.  114 metabolites are shown: 74 known metabolites with 52 detected mQTL and 42 unknown metabolites (with known m/z, but unknown identity) associated with 20 additional mQTLs.}
+\label{ch-quant_anal:metHeritability}
+\end{center}
+\end{figure}
+
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=1\textwidth]{ch-quant_anal/Figures/qtlEffects.pdf}
+\caption[Fraction of broad-sense heritability explained by identified mQTLs]{Fraction of broad-sense heritability explained by identified mQTLs.  Each stacked bar represents a single metabolite which was significantly associated with at least one locus.  The height of the bar is the broad-sense heritability of the metabolite's abundance, and the coloration partitions this heritability into unexplained heritability (gray), and the effects of each mapped QTL (colors).  Three examples are given to demonstrate the variable effect sizes observed across metabolites.  The distribution of metabolite abundances for a genotype is shown as a violin plot, and a 95\% confidence interval for the median of each genotype is reported with error bars.  This confidence interval was determined using a percentile bootstrapping method \cite{Davison:1997vn}.}
+\label{ch-quant_anal:qtlEffects}
+\end{center}
+\end{figure}
+
+Effect sizes and the total fraction of heritability explained vary greatly across metabolites, with some mQTLs explaining the vast majority of genetic variation, others collectively explaining a sizable portion through the joint additive effects of multiple loci and others still explaining little of the total variance.  It is clear that most metabolite's concentration is modestly heritable, although this calculation is likely inflated due to experimental conflation of segregant and day effects.  Despite this heritability, for most metabolites, only a small fraction of variation can be explained by the detected QTLs.  The low fraction of explained variation could be owing to insufficient power to detect additive effects, as has been noted when investigating the genetic basis of variable chemical resistance in BY$\times$RM \ref{Bloom:2013bq}.  An alternative explanation is that metabolites possess a significantly lower narrow-sense heritability (h$^{2}$) than broad-sense heritability (H$^{2}$) because of the non-linear relationships between pathway fluxes, metabolite concentrations and enzyme activity \cite{Kacser:1973fe, Rowe:2008ty}. Unexplained variation in metabolite concentrations is also likely strongly influenced by differences in culture conditions and the challenge in technical reproducibility of LC-MS data. 
+
+
+
+The detected QTLs can largely be grouped into three classes, 
+
+
+  
+
+
+
+
+
+ 
+
+
+

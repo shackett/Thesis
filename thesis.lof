@@ -1,6 +1,19 @@
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {1.1}{\ignorespaces woot\relax }}{2}{figure.caption.8}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Sample Title Page Layout}}{5}{figure.2.1}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Comparison of the log$_{2}$ abundances of un-normalized ion counts for pairs of technical replicates}}{7}{figure.caption.8}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Heatmap assessing the relative impact of tumor biology and person-to-person variability on metabolite abundances.}}{8}{figure.caption.10}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Metabolites accumulated or depleted in pancreatic cancer}}{10}{figure.caption.12}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Transcript, protein and metabolite QTL linkages}}{12}{figure.caption.13}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Distribution of broad sense heritability (H$^{2}$) across measured metabolites}}{14}{figure.caption.14}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Fraction of broad-sense heritability explained by identified mQTLs}}{15}{figure.caption.15}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces We can infer \textit {in vivo} reaction kinetics if we have measured the reaction's rate and concentrations of enzymes and all relevant substrates, products and effectors.}}{21}{figure.caption.15}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Summary of input data.}}{22}{figure.caption.16}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Michaelis-Menten kinetics is sufficient to relate substrate, product and enzyme concentrations to flux carried for the reaction triose-phosphate isomerase.}}{22}{figure.caption.17}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Two models of PRPP Amidotransferase (PPAT) kinetics are compared: reversible Michaelis-Menten kinetics with and without allosteric inhibition by AMP.}}{22}{figure.caption.18}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Metabolism-wide summary of the consistency between measured flux and Michaelis-Menten predictions.}}{22}{figure.caption.19}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Flux change in response to changing concentrations of metabolites and enzymes whose impact on flux is governed by the metabolites' and enzyme's elasticity.}}{23}{figure.caption.20}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
