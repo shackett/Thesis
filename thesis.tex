@@ -6,7 +6,7 @@
 
 %%% For print copies
 %% set 'singlespace' option to set entire thesis to single space, and define "\printmode" to remove all hyperlinks for printed copies of the thesis. Delete all output files before changing this mode -- it will turn hyperref package on and off
-\documentclass[12pt,lot, lof, singlespace]{puthesis}
+\documentclass[10pt,lot, lof, singlespace]{puthesis}
 \newcommand{\printmode}{}
 
 %%% For the electronic copy, use doublespacing, define "\proquestmode" to use outlined links, instead of colored links. 
@@ -226,7 +226,7 @@
 
 %%% If you want to produce a pdf that includes only certain chapters, specify them with includeonly, in addition to including all chapters below.
 %\includeonly{ch-quant_anal/quant_analysis, ch-intro/chapter-intro}
-\includeonly{ch-quant_anal/quant_analysis}
+%\includeonly{ch-quant_anal/quant_analysis}
 %%% You can also specify multiple chapters.
 %\includeonly{ch-intro/chapter-intro,ch-usage/chapter-usage}
 %\includeonly{chap1,chap2,chap3}
@@ -253,12 +253,12 @@
 % \include lets us split up the document (and each include starts a new page):
 \include{ch-intro/chapter-intro}
 \include{ch-quant_anal/quant_analysis}
-\include{ch-slimer/rOCA}
-\include{ch-usage/chapter-usage}
+\include{ch-simmer/rOCA}
+\include{ch-pt_compare/PTA}
 \include{ch-conclusion/chapter-conclusion}
 \appendix % all chapters following will be labeled as appendices
-\include{ch-appendicies/implementation}
-\include{ch-appendicies/printing}
+\include{ch-appendicies/proteomicsEM}
+
 
 
 % Make the bibliography single spaced
@@ -274,7 +274,7 @@
 \addcontentsline{toc}{chapter}{Bibliography}
 
 % include your .bib file
-\bibliography{ROCAbiblio}
+\bibliography{thesis_bib}
 
 \end{document}
 

@@ -1,0 +1,168 @@
+\chapter{Multiple Sources of Regulation Impact Nutrient-Dependent Protein Expression in Yeast\label{ch:pt_compare}}
+
+\section{Introduction}
+
+Each protein's expression is the bulk sum of its regulation through transcription, mRNA stability, translation and protein stability. These properties are tuned over evolutionary time-scales to accomplish massive variable expression of genes \cite{Csardi:2015kx}, and to refine how each gene interacts with regulatory components.  The source of these overall between-gene differences is likely variable sequence composition which alters, for instance, promoter strength or ribosome affinity independently of a cell's physiological state. On top of these relatively static constraints on expression, an organism must physiologically tune protein expression through dynamic changes in transcription, translation and stability.  While static between-gene and dynamic between-condition differences in expression involve the same regulatory components, there is little reason to suspect that these scenarios will be equivalent in terms of the relative importance of each transcription, translation and stability in controlling gene expression.  For example, transcriptional regulation means very different things when we consider between-gene versus between-condition regulation.  Between-gene differences in RNA expression are primarily due to promoter strength, while differences in transcription of a given gene across conditions are primarily governed by transcription factor binding.  
+
+%For example, an unnecessarily labile protein would be energetically wasteful and thus maladaptive, but if this protein's stability changes in response to cellular state, then the cell can change its state faster than dilution would allow 
+ 
+To quantitatively understand how protein levels are accomplished, we can mathematically represent changes in transcript and protein levels of any gene \textit{i} in a given condition \textit{j} using a pair of coupled differential equations (Equation \ref{Tdiffeq} and  \ref{Pdiffeq}) that account for the role of transcription ($\gamma$), RNA degradation ($\delta$), translation ($\alpha$), protein degradation ($\lambda$), and dilution due to growth ($GR$).  
+
+\begin{subequations}
+\begin{align}
+\frac{dT_{ij}}{dt} &= \gamma_{ij} - T_{ij}\delta_{ij} - T_{ij}GR_{j}\label{Tdiffeq}\\
+\frac{dP_{ij}}{dt} &= \alpha_{ij}T_{ij} - P_{ij}\lambda_{ij} - P_{ij}GR_{j}\label{Pdiffeq}
+\end{align}
+\end{subequations}
+
+Using this formalism, static differences in regulation exist if a parameter varies across genes ($i \in 1 ... I$), while dynamic differences in regulation exist if a parameter varies across condition ($j \in 1....J$) for a given gene.  In either case, meaningful regulation exists if the rate of a process varies greatly across genes or conditions, and this change causally results in a significant change in protein levels. While these equation provide notational convenience, determining the relative regulatory importance of each process is difficult because generally, protein levels are an integral over past transcript abundance and regulatory states (Equation \ref{dynamic_expression}), rather than being solely dependent on a single state.
+
+\begin{align}
+P_{T} &= P_{0} + \int_{t = 0}^{T} \alpha_{t} T_{t} - (\lambda_{t} + GR_{t}) P_{t} \hspace{2mm} dt \label{dynamic_expression}
+\end{align}
+
+While this relationship is complicated, Jovanovic et al. 2015 demonstrated that by determining how regulatory parameters vary across a dynamic transition using extensive experimentation and dense temporal sampling, the relative role of transcription, RNA stability, translation and protein stability could be assessed on a per-gene basis \cite{Jovanovic:2015hp}. The downside of this approach is that extensive experimentation is necessary to interrogate a single focused physiological transition which may be unrepresentative of general regulation.
+
+As an alternative to such detailed interrogation of gene expression dynamics, we and others \cite{Belle:2006hv, Csardi:2015kx}, noted that at steady-state, protein abundance can be expressed relative to steady-state transcript abundance and time-invariant parameters, allowing a single condition to be characterized by measurements at a single time-point.  From equation \ref{Pdiffeq}, we can see that if we are only interested in how protein levels are established, transcript abundance ($T_{ij}$) is sufficient to account for the combined influence of transcription, RNA degradation and transcript dilution. In this case, changes in protein abundance due to the combined influence of variable transcript abundance, translation and protein degradation rate still follows equation \ref{Pdiffeq} but this relationship can be expressed as a time-invariant function of these variables (Equation \ref{steady_expression}).
+
+\begin{align}
+&\frac{dP_{i}}{dt} = \alpha_{i}T_{i} - P_{i}\lambda_{j} - P_{i}GR\notag\\
+&\frac{dP_{i}}{dt} = 0 ; \frac{dT_{i}}{dt} = 0 \notag\\
+&\dot{P}_{i} = \frac{\dot{\alpha}_{i}\dot{T}_{i}}{\left(\dot{\lambda}_{i} + \dot{GR}\right)}\label{steady_expression}
+\end{align}
+
+% Between gene differences
+
+%Understanding how variable protein expression is accomplished has remained difficult, and reports differ greatly on the relative importance of control through transcription, RNA stability, translation and protein stability \cite{Belle:2006hv, Brar:2012ig, Li:2015jq, Jovanovic:2015hp}. Furthermore, as each of these reports has focused on a narrow slice of physiology, it is unclear whether the partitioning of regulatory importance in each of these cases is representative of the studied organism.
+
+%Most attempts to understand how protein abundance related to possible regulation have focused on a single possible source of regulation, such as regulation of transcription, translation, or transcript/protein stability and invariably find that this regulatory step dominates \cite{Belle:2006hv, Brar:2012ig}.  When multiple sources of regulation have been simultaneously addressed, it unclear whether the relative influence of regulatory mechanisms is generally representative \cite{Jovanovic:2015hp}.
+
+Building off of this approach which has previously been used to characterize between-gene differences in regulation, here we report a quantitative comparison of protein and mRNA relative abundance across 25 disparate \textit{S. cerevisiae} steady-states.  On a per-gene basis we determined whether protein expression follows from nutrient-dependent changes in mRNA expression or whether meaningful differences between protein and mRNA expression exist.  Based on data from 1161 genes, we find that while transcriptional changes do propagate into changes in protein abundance, additional layers of control either due to regulation of translational efficiency or protein stability are also important. As these growth conditions span diverse physiological and metabolic challenges, control of expression across these conditions should be generally representative for yeast.
+
+\section{Results}
+
+Our interest in how the overall expression of proteins, and to a larger extent all of physiology, in yeast is shaped by the interaction of the environment and genetically hard-wired regulation follows from previous characterization of how environmental variation impacts transcripts, metabolites and most recently proteins (Chapter \ref{ch:simmer}) and metabolism \cite{Brauer:2008jn, Boer:2010fb}. In each study, 25-36 steady-states were generated by simultaneously varying both culture growth rate and which nutrient limits growth (i.e. a \underline{C}arbon, \underline{N}itrogen, \underline{P}hosphorous source, as well as \underline{L}eucine and \underline{U}racil in appropriate auxotrophs). Across these studies, it is clear that transcripts, proteins and metabolites are differentially impacted by growth rate and limiting nutrient; with transcript abundances being strongly impacted by growth rate, metabolites primarily reflecting limiting nutrient and proteins showing an intermediate response \textcolor{red}{+ Hackett}.
+
+While measured transcript and protein levels \cite{Brauer:2008jn}\textcolor{red}{+ Hackett} are not totally equivalent in terms of experimental design and used distinct biological cultures as will later be discussed, the union of these two datasets represents the most diverse collection of paired transcript and protein data to date, warranting a conservative, exploratory analysis.  Each study focused on quantifying protein and transcript levels relative to a shared reference condition \cite{Quackenbush:2002kl}.  Since most technical variability will similarly impact both the experimental sample and reference, this approach is ideal for quantifying the relative abundance of proteins and transcripts. Treating both transcript relative abundance and protein relative abundance as lognormal, as is done by convention and \textcolor{red}{supported by}, log-protein abundance can be expressed as a linear function of log-transcript abundance and post-transcriptional regulation (Equation \ref{across_cond_steady_expression}).
+
+\begin{align}
+&\sfrac{\dot{P}_{i}}{\dot{P}_{ref}} = \sfrac{\dot{T}_{i}}{\dot{T}_{ref}}\frac{\dot{\alpha}_{i}}{\left(\dot{\lambda}_{i} + \dot{GR}\right)}\notag\\
+&\dot{P}_{i} = \dot{T}_{i}\frac{\dot{\alpha}_{i}}{\left(\dot{\lambda}_{i} + \dot{GR}\right)}\sfrac{\dot{P}_{ref}}{\dot{T}_{ref}}\notag\\
+&log_{2}\dot{P}_{j} = log_{2}\dot{T}_{j} + \log_{2}\frac{\dot{\alpha}_{j}}{\dot{\lambda}_{j} + \dot{GR}_{j}} + C\label{across_cond_steady_expression}
+\end{align}
+
+Based on equation \ref{across_cond_steady_expression}, we first determined the extent to which steady-state protein abundances reflect steady-state transcript abundances assuming no post-transcriptional regulation.  Across all genes and conditions, changes in protein abundance are only weakly associated with changes in protein abundance (r$^{2}$ = 0.131), although stronger transcriptional changes are more faithfully transmitted into meaningful changes in protein abundance (Figure \ref{ptscatter}A).  An increase in transcript-protein association for genes under strong transcriptional control, suggests that the poor correlation between proteins and transcripts may be variable across genes and this consistency may be better studied on a gene-by-gene basis.  When comparing the correlation of proteins and transcripts over the 25 experimental conditions, protein and transcripts are meaningfully positively correlated for only 59\% of genes; for the remaining genes, protein and transcript abundance are effectively uncorrelated (40\%) or even significantly anti-correlated ($\sim$1\%) (Figure \ref{ptscatter}B).
+
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=0.8\textwidth]{ch-pt_compare/Figures/PTcompare1.pdf}
+\caption{Correlation of protein and transcript relative abundance.  \textbf{A)} Protein and transcript abundance relative to the gene-average are compared across every gene and condition using a hexbin plot (i.e. bivariate histogram).  Four contours are shown where an equal density of protein-transcript relative abundance pairs exist.  \textbf{B)} The by-gene spearman correlation between protein and transcript relative abundance for every gene is shown.  Genes are colored based on whether protein and transcript relative abundances are significantly correlated (green), uncorrelated (gray) or anticorrelated (red).}
+\label{ptscatter}
+\end{center}
+\end{figure}
+
+For more than 40\% of highly expressed yeast genes, protein and RNA expression are effectively uncorrelated.  This gross disconnect could either be due to noise/irreproducibility or could be due to meaningful differences in proteins-per-transcript. Differences in proteins-per-transcript could be due to variable growth rate across cultures or differential regulation of translational efficiency or protein degradation (Equation \ref{across_cond_steady_expression}).  Growth rate can be largely excluded from this list as, accounting for variable growth rate across conditions does not meaningfully improve the correlation between protein and transcript abundance changes (r$^{2}$ = 0.152).  To determine whether noise or post-transcriptional regulation is responsible for variation in proteins-per-transcript, we can consider that meaningful regulation will likely impact multiple genes in a similar manner and furthermore differential regulation will primarily track the experimental design (i.e. regulation influenced by limiting nutrient and/or growth rate).  In contrast, most possible sources of noise will either be independent across genes (i.e. technical variance) or will covary across genes but not in a manner meaningfully related to the biological design of the experiment (i.e. culture irreproducibility, biological variance) \cite{Leek:2007kn}.
+
+Visualizing shared variation in transcript and protein abundance as well as proteins-per-transcript abundance across genes (Figure \ref{ptHM}A) we see that proteins-per-transcript strongly covaries across genes.  Furthermore, similarly to transcript and protein abundance, this covariation is strongly governed by growth rate and limiting nutrient, suggesting that biologically meaningful differences in proteins-per-transcript exist (Figure \ref{ptHM}B). The major post-transcriptional regulatory factors driving shared variation in proteins-per-transcript can be accounted for by summarizing these latent factors using principle components analysis and then determine which factors effect individual genes using Jackstraw \cite{Chung:2015bq} (Figure \ref{ptHM}C). Treating the top four principle components of the proteins-per-transcript matrix as a surrogate for these latent effects, substantially improves the correlation between protein and the shared effect of transcript abundance and fitted proteins-per-transcript (r$^{2}$ = 0.446).
+
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=0.8\textwidth]{ch-pt_compare/Figures/PTcompare.pdf}
+\caption{Protein and transcript relative abundance and implied proteins-per-transcript are each strongly influenced by growth rate and limiting nutrient. \textbf{A)} Heatmap summaries of transcript and protein relative abundance as well as proteins-per-transcript ($log_{2}\left[protein\right] - log_{2}\left[mRNA\right]$) is shown. The organization of rows in each heatmap is the same and was determined through hierarchical clustering of the proteins-per-transcript matrix using pearson correlation with average linkage. \textbf{B)} The principal components reflecting systematic variation in each dataset were found and the percent of total dataset variability explained by each significant principal component is shown. \textbf{C)} A lower dimensional representation of the raw proteins-per-transcript can be generated by determining which genes are influenced by each principal component.}
+\label{ptHM}
+\end{center}
+\end{figure}
+
+By analyzing proteins-per-transcript, the combined influence of variable translational efficiency, protein degradation and growth can be quantified, however specifically implicating variable translational efficiency or protein degradation as the causal factor driving the departures between proteins and transcripts is difficult. To get a better handle on how proteins-per-transcript is meaningfully regulated across these conditions and which genes are the focus of this regulation, we focused on the large differences in proteins-per-transcript that are apparent at nitrogen-limited slow growth.  Using GSEAMA, we determined which biological processes GO categories are best able to predict proteins-per-transcript and these gene sets were used to guide organization of genes into a hierarchical voronoi tesselation (Figure \textcolor{red}{figure}) \cite{Halligan:2007ds}.  Using this approach, it is clear that ribosomes and metabolic enzymes are differentially regulated in nitrogen limitation, with fewer ribosomes being produced per-transcript and an elevated number of enzymes per-transcript. To more globally determine how gene function is linked to proteins-per-transcript, genes were clustered into 20 groups and using PAGE, 8 GO categories could be associated with the clusters (Figure \ref{fpage_te}). Clustering was also strongly linked to the sequence composition of the included proteins, as 11 amino acid motifs were found using Fire-pro (Figure \ref{firepro_te}).
+
+% These two categories are particularly interesting as ribosomes are among the most stable proteins when they are actively translating and the least-stable when translation is inhibited \cite{Belle:2006hv}. Since amino acid concentrations are low in nitrogen limitation, ribosomes will tend to stall, fall apart and be degraded.  In contrast, metabolic enzymes are prioritized during nitrogen limitation, likely because they are needed to restore an appropriate level of amino acids.  The source of this control is unclear, although it is intriguing proposition that metabolites could stabilize proteins or increase translation.  Such an interaction between the metabolome and proteome could explain why metabolic enzyme concentrations more strongly reflect the cellular nutritional environment than their corresponding transcripts. 
+
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=0.6\textwidth]{ch-pt_compare/Figures/PAGE_rawTE.pdf}
+\caption{Fire-pro PAGE}
+\label{fpage_te}
+\end{center}
+\end{figure}
+
+
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=0.6\textwidth]{ch-pt_compare/Figures/FIRE-pro_rawTE_cleanup.pdf}
+\caption{Fire-pro TE}
+\label{firepro_te}
+\end{center}
+\end{figure}
+
+\section{Discussion}
+
+As would be assumed from the nature of transcriptional control, changes in transcript levels generally propagate into corresponding changes in protein level.  Noise, both in estimating transcript and protein abundance partially obscures the association between variables, a factor which would diminish the correlation between protein and transcript levels. Addressing this diffusion has been previously suggested as a way to reconcile the poor associations between protein and transcript abundances across genes \cite{Csardi:2015kx}.  While uncertainty certainly diminishes the association between individual transcripts and proteins, noise will in general affect different genes independently or in a manner associated with unmeasured or technical covariates rather than biological ones \cite{Leek:2007kn}. Instead, we see that the number of proteins-per-transcript is greatly influenced by the design of our experiment, strongly tracking both growth rate and which nutrient is limiting a culture.
+
+Across the diverse conditions 
+
+Focusing on nitrogen-limited cultures where genes differed greatly in proteins-per-transcript, we noted that the genes which with a lower relative translational efficiency or a greater translational efficiency are strongly related to their function.  In particular, two of the largest classes of proteins in terms of absolute levels, ribosomes and metabolic enzymes were regulated in an opposite manner, with ribosomes being selectively degraded in nitrogen limitation and metabolic enzymes preserved.  This finding dovetails strongly with previous findings that ribosomes are among the most stable proteins in the cell during active translation \cite{Belle:2006hv}, but are actively degraded under conditions of amino acid limitaiton \cite{Natarajan:2001ke, Washburn:2003ff, Zundel:2009dy}; meanwhile metabolic enzymes were stable regardless of translational state \cite{Belle:2006hv}.  As amino acids are greatly limiting in slow-growth nitrogen limitation, ribosomes which are unable to find charge amino acids are regularly resorbed back into the amino acid pool of the cell \cite{Zundel:2009dy, Xu:2013do}.  This relationship, suggests that under physiological conditions, protein degradation is a major factor governing steady-state protein levels.
+
+While differences in p
+
+Insufficient nitrogen levels may play into the continually degradation of existing protein, but cells which differ greatly in standing concentrations of amino acids and ribosomes likely also differ greatly in the rate which proteins are synthesized. These ``global'' factors will similarly influence genes in a given culture, but may strongly differ between disparate growth conditions.
+  As these effects would impact genes in a correlated fashion \cite{Klumpp:2009ic}
+
+Investigating the source of thes
+
+While transcripts are able to provide coarse alternations of 
+
+Comparing transcripts, proteins and metabolites, transcriptional control is more tightly coupled to the growth and stress state of the cell. To respond to the metabolic environment requires the introduction of additional control which is more sensitive to the metabolic state of the cell. 
+
+Global properties
+
+	
+factor which Drummond et al. 
+
+Despite their general association, 
+
+ changes in protein abundance are linked to changes in transcript abundance, but for many genes this association is weak
+
+In this study we do not have a good handle on all of the variance components that could be impacting the levels of proteins-per-transcript and thus while our finding should be generally robust to our incomplete knowledge, a better designed rigorous assessment of the relationship between transcript and protein abundances across diverse physiological conditions is warranted.
+
+
+
+\begin{outline}
+\1 reasonable to use despite not being replicates and genetic variation
+\2 for large environmental effects, effects due to change in nutrient dwarf genetic variation
+\2 genetic effects tend to operate differently than phenotypic variability.
+\end{outline}
+
+$V^{P/T}_{P} = V_{D} + V_{T} + V_{E} + V_{GD}$
+\begin{outline}
+\1 $V^{P/T}_{P}$ - total variation in proteins-per-transcript
+\1 $V_{D}$ - systematic variation in proteins-per-transcript due to experimental design
+\1 $V_{T}$ - technical inprecision in quantifying proteins-per-transcript
+\1 $V_{E}$ - culture-to-culture irreproducibility between proteomics and transcriptomics cultures
+\1 $V_{GD}$ - genetic variation between strains used for transcriptomics and proteomics that differentially interacts with experimental design
+\end{outline}
+genetic and environmental variance 
+dissimilarity between the transcriptomics and proteomics data
+
+if the noise/irreproducibility of the proteomics and microarray data dwarfed any signal of differential expression present. Noise here could mean three things: either differential mRNA expression is minimal and thus differential protein expression would not be large either and would easi 
+
+Genetic-by-design covariance ($V_{GD}$, e.g. GxE eQTLs) and to a lesser extent $V_{E}$ could contribute to the latent factors that approximate proteins-per-transcript.  We can provide a lower limit on the contribution of transcriptional control to control of protein expression in yeast as $\sfrac{0.131}{0.446}$ as \textcolor{red}{28.1\%}
+
+
+\section*{Materials \& Methods}
+
+\subsection{Processing and alignment of input data}
+
+
+
+
+\subsection{Testing the role of growth rate}
+
+
+
+\subsection{GSEAMA}
+
+
+
+\subsection{Voronoi Treemap}
+
+

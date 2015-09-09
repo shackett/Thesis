@@ -1,0 +1,106 @@
+\section{Statistical properties of Mass Spectrometry Data}
+
+\subsection{Background}
+
+As biologists continue to search for a deeper understanding of their system, there is an increasing focus on analyzing the proteins and metabolites that are the primary effectors of physiology and metabolism. This increased interest has been enabled by improved analytical techniques for measuring these species, particularly liquid/gas chromatography (GC/LC) coupled mass spectrometry (MS). While the promise of mass spectrometry is great, the community is far from reaching a consensus on how mass spectrometry data should be best analyzed.  Issues of inconsistent treatment include what distribution mass spectrometry data supposedly follows, sources of variation and in proteomics; how peptide-level information should be aggregated to estimate protein abundance. More troubling than these general inconsistencies, is the absence of side-by-side comparisons of alternative methods and a general lack of evaluation of parametric model assumptions. 
+
+Modern approaches to quantitatively model protein, peptide, or metabolite relative abundance generally focus on treating mass spectrometry data as approximately log-normal \cite{Cox:2008ir, Oberg:2012bm,Navarro:2014ke, Breunig:2014bu}, or analyzing protein spectral counts as a quasipoisson trait \cite{Li:2010bj}. Across those approaches which model mass spectrometry data as approximately log-normal, variation at two levels has been previously considered; peptide-level variance and signal-intensity dependent variance \cite{Oberg:2012bm,Navarro:2014ke}. While one or both of these sources of variation are frequently ignored \cite{Oberg:2012bm}, there is an increasing effort to account for the combined influence of multiple variance components \cite{Navarro:2014ke}. While such approaches are likely important, studies to data have failed to clarify whether under the assumed variance model, approximate log-normality is justified. Additionally, it is unclear whether peptide-level variance or signal-intensity dependent variance is the most relevant force of variable uncertainty in mass spectrometry data.
+
+To benchmark alternative statistical approaches for analyzing mass spectrometry data, three moderately sized mass spectrometry experiments (Table \ref{ch-quant_anal:mass_spec_design}) were investigated using a standardized workflow (Figure \ref{ch-quant_anal:MSworkflow_p1}) which allowed for direct model comparison and assumption evaluation.  The three \textit{S. cerevisiae} datasets used for this analysis were: (1) Boer et al. 2010, which examined the role of variable chemostat nutrient environment in driving metabolomic variation; (2) Hackett et al. 2015, further described in thesis chapter \ref{ch:simmer}, which similar to Boer et al. 2010 investigated how protein levels were affected by nutrient environment; (3) Foss et al. 2007, which investigated how levels of proteins are impacted by segregating variation between two parental strains. These datasets differ in terms of whether metabolites or peptides are analyzed and vary greatly in terms of both number of features and samples analyzed, thereby providing a good survey of the variable needs in mass spectrometry data analysis. The aim of each dataset is to estimate the relative abundance of features for each level of the the main effect while also minimizing the added variation introduced into the data from random block-specific effects (Equation \ref{eq:mass_spec_design}). 
+
+\begin{table}[h!]
+\begin{center}
+\resizebox{\columnwidth}{!}{
+\begin{tabular}{| l| l| l| l| c |}
+  \hline
+  Dataset & Type & Features & Samples & Model\\
+  \hline			
+  Boer et al. 2010 & Metabolites & 101 & 136 & $X \sim Condition + Method + (1|Block) + \epsilon$ \\
+  Hackett (\ref{ch:simmer}) & Peptides & 11168 & 75 & $X \sim Condition + (1|Block) + \epsilon$\\
+  Fell et al. 2007 & Peptides & 5279 & 448 & $X \sim Segregant + (1|BioRep) + \epsilon$ \\
+  \hline
+\end{tabular}
+}
+\caption[Summary of benchmark datasets]{Summary of benchmark datasets}
+\label{ch-quant_anal:mass_spec_design}
+\end{center}
+\end{table}
+
+
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width = 1\textwidth]{ch-quant_anal/Figures/MSanalysis_part1.pdf}
+\caption[Schematic representation of peptide and metabolite level analysis]{Schematic representation of peptide and metabolite level analysis}
+\label{ch-quant_anal:MSworkflow_p1}
+\end{center}
+\end{figure}
+
+The goal of this comparison is to determine whether mass spectrometry data can be assumed to follow a log-normal distribution and if so, which variance components are relevant. To the extent that log-normality is appropriate when analyzing peptides and metabolites, then powerful tools such as regression can be used, greatly simplifying downstream analysis. To the extent that log-normality may be a poor approximation of observed variability in mass spectrometry data, then data analysis should proceed using non-parametric methods which are robust to deviations from possible parametric forms.
+
+\subsection{Results $\&$ Discussion}
+
+Despite previous analysis, it is not immediately clear whether feature-specific and signal-dependent uncertainty will grossly impact data analysis. Across studies, feature-specific variation is generally either included or neglected, but its specific role has not been clearly discussed.  Similarly, while measurements with low-signal are clearly noisier than those with high-signal, it is unclear whether this effect is important when analyzing a single feature, with a relatively narrow range of measured ion counts. To assess the extent to which feature-specific and signal-dependent noise impact uncertainty in mass spectrometry data, three alternative variance models where fitted to each of the benchmark datasets (Figure \ref{ch-quant_anal:modelComparison}). 
+
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width = 1\textwidth]{ch-quant_anal/Figures/model_comparison.pdf}
+\caption[Sources of variability in mass spectrometry]{Sources of variability in mass spectrometry}
+\label{ch-quant_anal:modelComparison}
+\end{center}
+\end{figure}
+
+The feature-specific model assumes feature-wise homoschedasticity and thus can be evaluated through standard feature-wise regression. The ion count dependent model assumes that feature-level variation reflects differences in signal intensity between features. To test this model, residuals were binned according to ion count, and the bin variance was determined as the mean of squared residuals, adjusted for fitted degrees of freedom (Equation \ref{eq:spline_totalvar}). To determine the expected variance of a single observation based on its ion count, a spline function was used to fit average variance as a function of binned ion count.
+
+\begin{align}
+\sigma^{2}_{ic,k} &= \frac{\sum_{k}^{K}\epsilon_{k}^{2}}{K}\label{eq:spline_totalvar}
+\end{align}
+
+The final evaluated model, the feature/ion count dependent model, combines the two previous approaches, by assuming that features differ in how inherently noisy they are, but on top of this variation, some observations have added variation due to their relatively low signal strength. This model was fitted similarly to the two simpler models with the excess variance of low ion count observations being found by subtracting the peptide-specific variance in a bin from the total variance and fitting a spline (Equation \ref{eq:spline_excessvar}).
+
+\begin{align}
+\sigma^{2}_{ic,k} &= \frac{\sum_{k}^{K}\epsilon_{k}^{2} - \sigma^{2}_{pep,k}}{K}\label{eq:spline_excessvar}
+\end{align}
+
+As a first test of model performance we can determine whether studentized residuals ($\epsilon_{ij} / \sigma_{ij}$) are approximately normally distributed (Figure \ref{ch-quant_anal:normalityTests}). This analysis was done on a per-feature basis to allow for a summary of the fraction of features where a given variance model is appropriate. Each feature was summarized based on two tests of normality, the Shapiro-Wilk test \cite{Shapiro:1965gf} and the less powerful KolmogorovÐSmirnov test and excess kurtosis was calculated to determine the influence of a fat-tail / outliers. To generate a summary across all features, kurtosis was averaged, while for the two tests of normality, the fraction of features that do not show strong deviations from normality ($\pi_{0}$) was found \cite{Storey:2003cj}. Additionally, to test how much deviations from normality are driven by a minority of extreme observations, 0.1-10\% of the most extreme studentized residuals were removed and the normality summaries were re-assessed.
+
+The residual variation in the Boer metabolomic dataset is approximately normally distributed regardless of which variance model is adopted although the removal of $\sim$1-2\% of the most extreme observations definitely results in greater normality.  Removing more extreme observations than 1-2\% removes the appropriate tails of the normal distribution resulting in extreme deviations from normality, as determined by the Shapiro-Wilk test. The residuals in the the Fell proteomics dataset show more pronounced deviations from normality based on both the KS and Shapiro-Wilk test as well as excess kurtosis. In this dataset, ion-count dependent variation greatly decreases the influence of outliers and improves the fraction of peptides that can be modeled as approximately normally-distributed. The residuals of the Hackett proteomics dataset are approximately normal regardless of the variance method, although removal of $\sim$3\% of extreme observations further improves normality.
+
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width = 0.8\textwidth]{ch-quant_anal/Figures/normalityTests.pdf}
+\caption[Evaluation of residual normality]{Evaluation of residual normality}
+\label{ch-quant_anal:normalityTests}
+\end{center}
+\end{figure}
+
+While residual normality is an indication that log-normality is generally an appropriate assumption, to full make use of the determined variance, then the residuals should follow a normal distribution whose variance is determined by the variance model (Equation \ref{eq:resid_normality}).
+
+\begin{align}
+\epsilon_{ij} &\sim \mathcal{N}(\mu = 0, \sigma = \sigma_{ij})\notag\\
+\epsilon_{ij} / \sigma_{ij} &\sim \mathcal{N}(\mu = 0, \sigma = 1)\label{eq:resid_normality}
+\end{align}
+
+To determine which variance model is best supported on a feature-to-feature basis, the log-likelihood of residuals was calculated under each variance model (Equation \ref{eq:resid_norm_likelihood}) and the variance model which best fit each feature was found (Figure \ref{ch-quant_anal:modelFits}). For nearly all features, feature-specific variation is best able to model variability in the Boer metabolomics dataset. This is largely because ion count dependent variation in metabolite abundance is a relatively weak signal which is swamped by between-metabolite differences in uncertainty.  In both proteomics dataset, some peptides were better fit using peptide-specific variation, while for others the inclusion of additional ion-count dependent variation improved the accuracy of variance estimation. This mixed performance is likely because while peptide variance is strongly impacted by signal strength (Figure \ref{ch-quant_anal:modelComparison}), within the bins which are used to estimate this added effect, individual residuals are on average less variable than the bin average. Thus, while in ideal cases, the inclusion of ion count dependent variability can naturally deal with ``outliers'', in other cases applying weights to individual residuals only adds extra noise. 
+
+\begin{equation}
+\ell_{i} = \sum_{j}^{J}\text{ln}\mathcal{N}(x = 0; \mu = 0, \sigma = \sigma_{ij})\label{eq:resid_norm_likelihood}
+\end{equation}
+
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width = 0.8\textwidth]{ch-quant_anal/Figures/varianceModelPerf.pdf}
+\caption[Relative support for tested variance models]{Relative support for tested variance models}
+\label{ch-quant_anal:modelFits}
+\end{center}
+\end{figure}
+
+While mass spectrometry data has great biological utility, in some cases, appropriately modeling its variation may be necessary before log-normality can be assumed. Estimating the variance of individual observations allows for appropriate weighting of observations during regression to determine the main effects of interest.  The variable uncertainty of estimates of individual peptides can in turn be used to improve protein-level inference, where if multiple peptide corresponding to the same protein are measured, these different measurements can be integrated proportionally to their variable precision ($\sfrac{1}{\sigma^{2}}$). This approach unlocks a powerful novel approach to protein quantification and variance estimation (Figure \ref{ch-quant_anal:pepToProt}) which is the subject of Appendix \textcolor{red}{peptide-> proteinEM}. This approach allows meaningful biological deviations from the standard peptides to proteins inference to emerge from the data, by appropriately assess peptides which could belong to multiple proteins and by flagging peptides which deviate strongly from the overall trend of the protein, which may be evidence of covalent-modification.
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 0.8\textwidth]{ch-quant_anal/Figures/MSanalysis_part2.pdf}
+\caption[Estimating protein abundance from peptides]{Estimating protein abundance from peptides}
+\label{ch-quant_anal:pepToProt}
+\end{center}
+\end{figure}
+
