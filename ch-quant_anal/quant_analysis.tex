@@ -14,7 +14,6 @@ To illustrate the challenges and opportunities of mass spectrometry, in this cha
 
 Because metabolite and proteins are the central drivers of metabolism and physiology, mass spectrometry data, when appropriately analyzed, can provide powerful insights into cellular function.  To illustrate this power, I will discuss several published studies that I have coathored, where I will focus on my contributions towards data analysis. Partially owing to the analysis of human pancreatic tumor metabolites, Commisso et al. 2013 and Kamporst et al. 2015, highlight the discovery of a novel way in which tumor acquire nutrient \cite{Commisso:2013hz, Kamphorst:2015cc}.  In Bruenig et al. 2014, the relationship between segregating genetic variation and metabolite concentrations is investigated, revealing both genetic variants that perturb local metabolite concentrations and those with far reaching effects on metabolite concentrations and flux \cite{Breunig:2014bu}.  In Mathew et al. 2014, proteomics is used to identify classes of proteins which are specifically degraded or spared during autophagy \cite{Mathew:2014hz}.
 
-
 \subsection{Identifying a Metabolomic Signature of Protein Eating in Pancreatic Tumors}
 
 As part of the Stand Up to Cancer (SU2C) Pancreatic Cancer Dream-team, a coalition spanning clinician and genomics researchers, the Rabinowitz lab was tasked with determining how pancreatic tumors metabolically differ from normal pancreatic tissue.  It is increasingly apparent that metabolic transformations, such as aerobic glycolysis (i.e. the Warburg effect), are a cardinal feature of cancer progression \cite{VanderHeiden:2009gq, Hanahan:2011gu}.  Most of these changes entail an excess consumption of nutrients and a resulting increased production of waste products such as lactate and reactive oxygen species.  While higher rates of nutrient utilization do not necessitate a change a corresponding change in metabolite concentrations, growth-limiting metabolites tend to be depleted in culture, while ``overflow'' metabolites tend to accumulate, yielding patterns that could be detected through metabolomics \cite{Boer:2010fb}.
@@ -26,7 +25,7 @@ From 49 human pancreatic ductal adenocarcinoma patients (PDAC), paired tumor and
 Ion counts were normalized to correct for differences in total metabolite abundances across samples, and for any sample-to-sample drift in the overall instrument response factor.  A normalization factor ($\gamma_{i}$) was calculated for each LC-MS run \textit{i}.  To calculate $\gamma_{i}$, every known metabolite peak P$_{mi}$ in LC-MS run \textit{i} was quantified, and compared to the median value of peak \textit{m} across all samples, $\mu_{m}$.  The scaling factor was calculated according to equation \ref{normal}, and ion counts were then corrected by P$^{*}_{mi}$ = $\frac{P_{mi}}{\gamma_{i}}$.
 
 \begin{equation}
-\gamma_{i} = \text{median}(\frac{P_{mi}}{\mu_{m}})
+\gamma_{i} = \text{median}\left(\frac{P_{mi}}{\mu_{m}}\right)
 \label{normal}
 \end{equation}
 
@@ -106,7 +105,7 @@ Overall, the concentrations of 57 metabolites were significantly enriched or dep
 Identifying this discrepancy helped our group identify a novel method by which tumor supplement their growth requirement.  Both in primary tumors and cell culture, tumors activate macropinocytosis, allowing the bulk uptake of extracellular protein that can be broken down to provide extra amino acids beyond what could be acquired from the circulation. As protein catabolism yields amino acids in the ratio found in protein, essential amino acids which can only be used for protein synthesis accumulate, while non-essential amino acids which can be used for other purposes are depleted.  
 
 
-\subsection{Genetic variation affecting metabolite concentrations of yeast}
+\subsection{Genetic variation affecting metabolite concentrations in yeast}
 
 An important outstanding question in metabolism research is the mechanism by which, and the extent to which, segregating genetic variation impacts population variability in metabolism.  From analysis of resting genetic variation it is clear that central carbon metabolism is under strong purifying selection \cite{Greenberg:2008uy}, suggesting that natural genetic variation impacting enzyme V$_{max}$ is constrained to operate within a relatively narrow range of activities. The functional consequences of excessive or insufficient enzyme activity are generally changes in metabolite pool levels that naturally buffer genetic perturbations \cite{Fendt:2010gr}, provide intrinsic canalisation to the metabolic network. Fitness is compromised when enzyme activity is pushed outside the bounds that can be absorbed by metabolite pools or when an enzyme is inappropriately regulated through either changes in expression or allostery. 
 
