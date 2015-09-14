@@ -1,0 +1,128 @@
+\documentclass[12pt]{article}
+\usepackage[left=1in,top=1in,right=1in,bottom=1in,nohead]{geometry}
+\usepackage{geometry}                % See geometry.pdf to learn the layout options. There are lots.
+\geometry{a4paper}                   % ... or a4paper or a5paper or ... 
+\usepackage{wrapfig}	%in-line figures
+\usepackage{natbib}		%bibliography
+\usepackage{pslatex} 	%for times new roman
+\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{epstopdf}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{xfrac}
+\usepackage{color}
+\usepackage{relsize}
+
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+\DeclareMathSizes{10}{10}{10}{10}
+
+\begin{document}
+
+\setlength{\parskip}{1mm}
+\linespread{1}
+
+\thispagestyle{empty}
+\pagestyle{empty}
+
+
+
+\begin{align}
+t^{unpaired} &= \frac{\overline{\textbf{X}}_{tumor} - \overline{\textbf{X}}_{normal}}{\sqrt{\sigma^{2}_{tumor} + \sigma^{2}_{normal}}\sqrt{\frac{2}{N}}}\\
+t^{unpaired} &\sim t_{2N-2}
+\end{align}
+
+
+\begin{align}
+t^{paired} &= \frac{\text{mean}(\textbf{X}_{tumor} - \textbf{X}_{normal})}{\frac{\text{sd}(\textbf{X}_{tumor} - \textbf{X}_{normal})}{\sqrt{N}}}\\
+t^{paired} &\sim t_{N-1}
+\end{align}
+
+
+\begin{align}
+\text{\textbf{LP:}} \hspace{5mm} max \hspace{2mm}&\textbf{v}^{T}\textbf{c}\notag\\
+s.t. \hspace{2mm}&\textbf{Sv} = \textbf{0}\notag\\
+&\textbf{Gv} > \textbf{h}\notag
+\end{align}
+
+
+\begin{equation}
+\nu = {\color{blue}[\text{TPI1}]K_{cat} }{\color{red}\frac{\frac{1}{K_{M}^{\text{DHAP}}}\left([\text{DHAP}] - \frac{[\text{G3P}]}{K_{eq}}\right)}{1 + \frac{[\text{DHAP}]}{K_{M}^{\text{DHAP}}} + \frac{[\text{G3P}]}{K_{M}^{\text{G3P}}}}}
+\end{equation}
+
+\begin{equation}
+\frac{\frac{1}{K\\_r\\_1054\\_t\\_0331}*\left(t\\_0331-\frac{t\\_0386}{Keqr\\_1054}\right)}{\left(1+\frac{t\\_0331}{K\\_r\\_1054\\_t\\_0331}+\frac{t\\_0386}{K\\_r\\_1054\\_t\\_0386}\right)}
+\end{equation}
+
+\centering
+\begin{tabular}{|r|rrrrrrr|}
+  \hline
+ & 1 & 2 & 3 & 4 & 5 & 6 & 7 \\ 
+  \hline
+A & 1 & -1 & 0 & 0 & 0 & 0 & 0 \\ 
+  B & 0 & 1 & -1 & 0 & -1 & -1 & 0 \\ 
+  C & 0 & 0 & 1 & -1 & 0 & 0 & 0 \\ 
+  D & 0 & 0 & 0 & 0 & 0 & 1 & -1 \\ 
+   \hline
+\end{tabular}
+\end{table}
+
+\Large
+\begin{equation}
+\frac{\partial J}{J} = C \hspace{1mm}\cdot\hspace{1mm} \epsilon_{i} \hspace{1mm}\cdot\hspace{1mm} \frac{\partial S_{i}}{S_{i}}
+\end{equation}
+
+\begin{equation}
+\text{Metabolic Leverage} = \frac{|\epsilon_{i}| \hspace{1mm} \cdot \hspace{1mm} \sigma_{i}}{\mathlarger{\sum_{j = 1}^{J}} |\epsilon_{j}| \hspace{1mm} \cdot \hspace{1mm} \sigma_{j}}
+\end{equation}
+
+\Large
+\begin{equation}
+\nu = K_{cat} \cdot [E] \cdot \frac{S}{S + K_{m}}
+\end{equation}
+
+\begin{equation}
+\nu = K_{cat} } \cdot [E] \cdot \frac{\frac{1}{K_{d}^{\text{S}}}\left([S] - \frac{[P]}{K_{eq}}\right)}{1 + \frac{[S]}{K_{d}^{\text{S}}} + \frac{[P]}{K_{d}^{\text{P}}}}}
+\end{equation}
+
+\begin{align}
+&\vdots\\
+V_{2} = f([M_{1}], &[M_{2}], [E_{2}])\\
+V_{3} = f([M_{2}], &[M_{3}], [E_{3}])\\
+&\vdots
+\end{align}
+
+\begin{align}
+&\vdots\\
+\frac{d[M_{1}]}{dt} = [M_{1}]& + V_{1} - V_{2}\\
+\frac{d[M_{2}]}{dt} = [M_{2}]& + V_{2} - V_{3}\\
+\frac{d[M_{3}]}{dt} = [M_{3}]& + V_{3} - V_{4}\\
+&\vdots\\
+\end{align}
+
+\begin{align}
+&\vdots\\
+\frac{d[M_{1}]}{dt} &= 0\\
+\frac{d[M_{2}]}{dt} &= 0\\
+\frac{d[M_{3}]}{dt} &= 0\\
+&\vdots\\
+\end{align}
+
+
+\normalsize
+\cite{Kacser:1973fe}
+\cite{Hansen:2009em}
+\cite{Lu:2006cx}
+\cite{Hanahan:2011gu}
+\cite{Khan:2009ik}
+
+\bibliographystyle{plain}
+\bibliography{dummyTex_papers.bib}
+
+
+
+
+
+
+\end{document}
