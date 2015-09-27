@@ -1,22 +1,24 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {1.1}{\ignorespaces Summary of primary thesis topics}}{5}{figure.caption.7}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Schematic representation of peptide and metabolite level analysis}}{8}{figure.caption.9}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Schematic representation of peptide-level and metabolite-level analysis}}{8}{figure.caption.9}
 \contentsline {figure}{\numberline {2.2}{\ignorespaces Sources of variability in mass spectrometry}}{9}{figure.caption.10}
 \contentsline {figure}{\numberline {2.3}{\ignorespaces Evaluation of residual normality}}{10}{figure.caption.11}
 \contentsline {figure}{\numberline {2.4}{\ignorespaces Relative support for tested variance models}}{11}{figure.caption.12}
 \contentsline {figure}{\numberline {2.5}{\ignorespaces Estimating protein abundance from peptides}}{12}{figure.caption.13}
 \contentsline {figure}{\numberline {2.6}{\ignorespaces Comparison of the log$_{2}$ abundances of un-normalized ion counts for pairs of technical replicates}}{13}{figure.caption.15}
 \contentsline {figure}{\numberline {2.7}{\ignorespaces Heatmap assessing the relative impact of tumor biology and person-to-person variability on metabolite abundances.}}{14}{figure.caption.17}
-\contentsline {figure}{\numberline {2.8}{\ignorespaces Metabolites accumulated or depleted in pancreatic cancer}}{16}{figure.caption.19}
-\contentsline {figure}{\numberline {2.9}{\ignorespaces Transcript, protein and metabolite QTL linkages}}{18}{figure.caption.20}
-\contentsline {figure}{\numberline {2.10}{\ignorespaces Distribution of broad sense heritability (H$^{2}$) across measured metabolites}}{19}{figure.caption.21}
-\contentsline {figure}{\numberline {2.11}{\ignorespaces Fraction of broad-sense heritability explained by identified mQTLs}}{20}{figure.caption.22}
-\contentsline {figure}{\numberline {2.12}{\ignorespaces Proteomic alterations due to loss of autophagy}}{22}{figure.caption.23}
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Metabolites accumulated or depleted in pancreatic cancer}}{16}{figure.caption.20}
+\contentsline {figure}{\numberline {2.9}{\ignorespaces Transcript, protein and metabolite QTL linkages}}{18}{figure.caption.21}
+\contentsline {figure}{\numberline {2.10}{\ignorespaces Distribution of broad sense heritability (H$^{2}$) across measured metabolites}}{19}{figure.caption.22}
+\contentsline {figure}{\numberline {2.11}{\ignorespaces Fraction of broad-sense heritability explained by identified mQTLs}}{20}{figure.caption.23}
+\contentsline {figure}{\numberline {2.12}{\ignorespaces Proteomic alterations due to loss of autophagy}}{22}{figure.caption.24}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Correlation of protein and transcript relative abundance}}{56}{figure.caption.30}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Protein and transcript relative abundance and implied proteins-per-transcript are each strongly influenced by growth rate and limiting nutrient}}{57}{figure.caption.31}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Characterizing clusters of genes with similar variation in proteins-per-transcripts across conditions}}{58}{figure.caption.32}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Correlation of protein and transcript relative abundance}}{55}{figure.caption.7}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Protein and transcript relative abundance and implied proteins-per-transcript are each strongly influenced by growth rate and limiting nutrient}}{56}{figure.caption.8}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces GO terms affecting protein expression and proteins-per-transcript}}{57}{figure.caption.9}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Characterizing 20 clusters of genes based on variation in proteins-per-transcripts across conditions}}{58}{figure.caption.10}
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Procedure for accounting for flux uncertainty}}{71}{figure.caption.37}
 \addvspace {10\p@ }
