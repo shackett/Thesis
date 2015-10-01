@@ -6,7 +6,9 @@
 
 %%% For print copies
 %% set 'singlespace' option to set entire thesis to single space, and define "\printmode" to remove all hyperlinks for printed copies of the thesis. Delete all output files before changing this mode -- it will turn hyperref package on and off
-\documentclass[10pt,lot, lof, singlespace]{puthesis}
+%\documentclass[10pt,lot, lof, singlespace]{puthesis}
+\documentclass[10pt,lot, lof, onehalfspace]{puthesis}
+
 %\newcommand{\printmode}{}
 
 %%% For the electronic copy, use doublespacing, define "\proquestmode" to use outlined links, instead of colored links. 
@@ -239,11 +241,10 @@
 %%%% Hide some chapters
 
 %%% If you want to produce a pdf that includes only certain chapters, specify them with includeonly, in addition to including all chapters below.
-%\includeonly{ch-quant_anal/quant_analysis, ch-intro/chapter-intro}
-%\includeonly{ch-conclusion/chapter-conclusion, ch-intro/chapter-intro}
+%\includeonly{ch-quant_anal/quant_analysis, ch-intro/chapter-intro, ch-pt_compare/PTA}
+\includeonly{ch-conclusion/chapter-conclusion, ch-intro/chapter-intro}
 %%% You can also specify multiple chapters.
-\includeonly{ch-pt_compare/PTA}
-%\includeonly{chap1,chap2,chap3}
+%\includeonly{ch-pt_compare/PTA}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
