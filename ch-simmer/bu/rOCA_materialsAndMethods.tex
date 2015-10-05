@@ -1,0 +1,304 @@
+
+\section{Materials and Methods}
+
+\subsection{Strains and culture conditions.} 
+
+Strains of \textit{Saccharomyces cerevisiae} used and chemostat culture conditions are the same as those in Boer et al. 2010 \cite{main-Boer:2010fb}.  Briefly, FY derivative strains were grown at 25 distinct steady-states established through simultaneously modulating both limiting nutrient and dilution/ growth rate. The limiting nutrients utilized were either an unsubstitutible carbon, nitrogen, or phosphorous source, as well as supplemented uracil or leucine in a pathway auxotroph: uracil (MATa \textit{ura3-52}) or leucine (MATa leu2$\bigtriangleup$1).  Variable growth rates were accomplished using five dilution rates ($\sim$ 0.05, 0.11, 0.16, 0.22, 0.3 h$^{-1}$).
+
+Culture density was tracked using a Klett Colorimeter, packed cell volume, and Coulter Counter. Intracellular volume per culture volume was determined using the Klett Colorimeter and packed cell volume.  When culture density had stabilized for more than 24 hours (typically taking 5-7 days), we assumed that a steady-state had been reached.  The pH of each culture was continuously monitored and maintained at 5.0 throughout the experiment.
+
+\subsection{Determining metabolite uptake and excretion rates through $^{1}$H-NMR.}
+
+For each of the 25 chemostats, 10 ml of culture was filtered through a 0.45 $\mu$m HNWP filter (HNWP02500, Millipore, Billerica, MA) in duplicate and the concentration of metabolites in the flow-through (spent media) was analyzed by $^{1}$H-NMR.  Each replicate was mixed 9:1 to a final concentration of 10\% D$_{2}$O, 500 $\mu$M sodium azide, 500 $\mu$M DSS (4,4-dimethyl-4-silapentane-1-sulfonic acid).  Using a 500 MHz Advance III (Bruker) a $^{1}$H-NMR spectrum of each replicate was generated using the following acquisition parameters: TD = 65536, NS = 32, D1 = 10s, SW = 16, O1P = 4.68, P1 = 7.2, P12 = 2400, SPW1 = 0.0009, SPNAM1 = Gaus1\_180r.1000.  Unknown metabolites were identified using 2D NMR.  NMR peaks were analyzed using rNMR \cite{Lewis:2009bx}, by choosing the cleanest peak of each metabolite and normalizing its height relative to the DSS signal in order to account for differences in osmolarity between samples.  Using standards of known concentration, absolute concentrations could be assigned to each experimental sample.  From the steady state concentration of metabolites in spent media and the culture dilution rate, at steady-state, the rate of excretion (of metabolites not present in the original media) can be found using equation \ref{excretion}.  
+
+\begin{align}
+\sfrac{d[Metabolite]_{culture}}{dt} &= j_{excretion} - [Metabolite]_{culture} \cdot DR\notag\\
+\sfrac{d[Metabolite]_{culture}}{dt} &= 0\notag\\
+j_{excretion} &= [Metabolite]_{culture} \cdot DR \label{excretion}
+\end{align}
+
+The rate of uptake of supplied nutrients can be found analogously by comparing the final concentration of nutrients to their concentration in formulated media (equation \ref{nutrient}).
+
+\begin{align}
+\sfrac{d[Nutrient]_{culture}}{dt} &= DR \cdot [Nutrient]_{media} - DR \cdot [Nutrient]_{culture} - j_{uptake}\notag\\
+\sfrac{d[Nutrient]_{culture}}{dt} &= 0\notag\\
+0 &= DR \cdot ([Nutrient]_{media} - [Nutrient]_{culture}) - j_{uptake}\notag\\
+ j_{uptake} &= ([Nutrient]_{media} - [Nutrient]_{culture}) \cdot DR\label{nutrient}
+\end{align}
+
+\subsection{Determining the rate of synthesis of biomass components.}
+
+The principle metabolic task of a microbe is to produce enough macromolecules that it can divide.  In a chemostat culture, the continual synthesis of macromolecules offsets the loss of yeast cells (and their associated biomass) through dilution (equation \ref{biomass-synth}).  This expression holds not only for complete macromolecules, but also their component monomers and free metabolites.  
+
+\begin{align}
+\sfrac{d[Macromolecule]}{dt} &= j_{synthesis} - [Macromolecule] \cdot DR\notag\\
+\sfrac{d[Macromolecule]}{dt} &= 0\notag\\
+j_{synthesis} &= [Macromolecule] \cdot DR \label{biomass-synth}
+\end{align}
+
+As the steady-state composition of yeast cells strongly informs cellular fluxes, the abundance's of major macromolecule pools \cite{Lange:2001th} were found separately for each of the 25 chemostats.
+
+\textbf{Sample preparation for microtiter biomass assays.} For each chemostat, 100-400 ml of effluent was collected on ice, to measure dry-weight and quantify macromolecule composition. These samples were centrifuged at 2600g for 30 minutes at 4$^{o}$C, the pellet was resuspended in water, transferred into 15 ml conical tubes, pelleted at 1600g for 5 minutes at 4$^{o}$C  and this pellet was stored at -80$^{o}$C.  Pelleted cells were thawed on ice, resuspended in 2 ml of homogenization buffer (0.01 M KH$_{2}$PO$_{4}$, 1 mM EDTA, pH 7.4) and then pelleted at 2500g for 10 minutes at 4$^{o}$C.  Pellets were resuspended in 1 ml of homogenization buffer, transferred to 1.5 ml microcentrifuge tubes, centrifuged at 13,000 rpm for 1 minute and the supernatant was discarded.  Samples were dehydrated for 24 hours at 60$^{o}$C using a vacuum concentrator and weighted on a precision microbalance. Approximately 30 mg of dry yeast was resuspended in 1 ml of homogenization buffer with 0.5\% Triton-X and mechanically homogenized (Mini-Beadbeater-16; Biospec Products, Bartlesville, OK).  A liquid handling robot was used to aliquot three 20 $\mu$l technical replicates of each of the 25 biological samples into 96-well assay plates, so that macromolecule pools could be measured spectrophotometrically.
+
+\textbf{Total carbohydrate.} A six-fold scaled up version of the phenol-sulfuric assay for total carbohydrates was used to assess the total amount of trehalose, glycogen, mannan and glucans found in 96-well plates of dried yeast \cite{Masuko:2005fy}.  Measurement for standards confirmed similar molar absorptivity for each of these four species (and not chitin), consistent with previous work \cite{Masuko:2005fy}, indicating that the total abundance will be robust to variable proportions of the four di/polysaccharides.  Trehalose concentration, as determined by mass spectrometry (see below), was subtracted from total carbohydrate, leaving a total carbohydrate fraction of dry-weight which represents the three main polysaccharides.  The proportions of these polysaccharides were assumed to follow previous measurements: \{\% by weight: $\beta$-glucan: 46\%; glycogen: 21\%; mannan: 33\%\} \cite{Herrgard:2008gb}.  For the purpose of this study, the total number of sugar monomers incorporated was more important than specific polymers for determining flux through most reactions.  
+
+\textbf{Total protein.} The amount of protein contained within 96-well plates of dried yeast was determined using a BCA assay (Pierce BCA Protein Assay Kit; Thermo Fisher Scientific, Waltham, MA). The resulting fraction of dry-weight contained in protein was lower than previous reports \cite{main-Schulze:1995uv, main-Lange:2001th}.  To reconcile these data, the fraction of protein found in each experimental chemostat and in each of these previous studies was predicted using linear regression with a study-specific intercept, treating limiting nutrient as a covariate and assuming linear changes with respect to dilution rate: $f_{protein} \sim \alpha_{study} + \beta_{limitation} + \gamma \cdot DR + \epsilon$.  From this regression, the fitted value of \% protein was found, treating Lange et al. 2001 as the most accurate fraction, i.e. $\hat{f}_{protein} = \hat{\alpha}_{Lange} + \hat{\beta}_{limitation} + \hat{\gamma} \cdot DR$.  Amino acid proportions in protein were assumed to follow previous reports:\{A: 8.8\%; C: 0.17\%; D: 8.42\%; E: 9.45\%; F: 4.74\%; G: 4.67\%; H: 2.2\%; I: 5.42\%; K: 9.03\%; L: 8.33\%; M: 1.62\%; N: 2.88\%; P: 4.06\%; Q: 3.3\%; R: 6.03\%; S: 4.18\%; T: 4.89\%; V: 6.64\%; W: 1.24\%; Y: 3.96\%\} \cite{Herrgard:2008gb}.  The amino acid composition of cellular proteins has been reported to be stable across nutrient conditions in yeast \cite{Lange:2001th}, an observation that suggest that ribonucleotides are invariant as well.
+
+\textbf{RNA.} Five ml of culture was filtered in duplicate through a 0.45 $\mu$m nylon filter (HNWP02500; Millipore, Billerica, MA), flash frozen and stored until extraction at -80$^{o}$C.  Frozen samples were thawed on ice, and RNA was extracted using phenol-chloroform.  The abundance of RNA in each sample was measured using a Bioanalyzer 2100 (Agilent Technologies, Santa Clara, CA).  As in the case of proteins, the measured fraction of dry-weight contained in RNA was lower than in previous reports; therefore, these data were reconciled as per protein abundance \cite{Schulze:1995uv, Lange:2001th}. This fraction of RNA was partitioned into individual ribonucleotides following previous measurements \{\% by weight: AMP: 24\%; CMP: 22\%, GMP: 25\%; UMP: 29\%\} \cite{Herrgard:2008gb}.
+
+\textbf{DNA.} The average DNA content of each cell was inferred from a previously determined relationship between chemostat dilution rate and the fraction of budded cells (fraction budded = 0.936 - 1.971$\cdot$DR) \cite{main-Brauer:2008jn}.  Under the assumption that budded cells were diploid and unbudded cells were haploid, the rate of deoxyribonucleotide incorporation could be found from genome size, GC content and the number of cells per culture volume.
+
+\textbf{Fatty acids.} The concentration of fatty acids was assessed through absolute quantification of the most abundant fatty acid tails \cite{Pramanik:1997ja}.  Lipids were first isolated through resuspension in 0.1 M HCl/MeOH (50/50) and extraction with 0.5 ml cold (-20$^{o}$C) chloroform.  After removing the solvent under N$_{2}$ flow, 1 ml of 90\% methanol, 0.3 M KOH was added and samples were heated for one hour at 80$^{o}$C.  Uniformly $^{13}$C-labelled C16-0, C16-1, C18-0, C18-1 were added.  Concentrations of labelled fatty acids were within an order of magnitude of unlabeled ones.  100 $\mu$l formic acid was added to saponify lipids and liberated fatty acids were extracted twice with one ml of hexane.  Samples were dried under N$_{2}$ gas and resuspended in chloroform/methanol/H$_{2}$O (1/1/0.3), to a final concentration of 2 $\mu$l cell volume per ml.
+
+Fatty acids were quantified using LC-MS on a Q-TOF 6550 (Agilent Technologies, Santa Clara, CA).  Fatty acids were separated chromatographically using 70 - 99\% MeOH for 20 minutes followed by 99\% MeOH for 20 minutes.  A tributylamine ion pairing agent was used on a C8 column (Phenomenex Luna C8, 100 $\AA$, 3 $\mu$M particle size, 150x2 mm).  Scan range: (0-20 min) 200 - 400; (20-40 min) 300 - 575 m/z.  Fatty acids were identified based on exact mass and retention time similarity to pure standards and quantified using MAVEN \cite{Melamud:2010bp}.  
+
+\textbf{Inorganic phosphate.} Abundance was measured in 96-well plates of dried yeast using a colorimetric assay (K410-500; BioVision, Milpitas, CA).  Analysis of polyphosphate standards confirmed that sample preparation steps had already reduced polyphosphates to monomers, and thus, measured phosphate was a combination of inorganic monophosphate and polyphosphates.
+
+\textbf{Soluble metabolites.} Intracellular pools of twenty metabolites with a median concentration of greater than 1 mM were a consideration when defining biomass composition because, for many of these metabolites, the rate in which they are utilized may be in the same order of magnitude as the rate in which they are lost through dilution.  Determining the concentration of these metabolites, and other low-abundance metabolites, is described below.
+
+\subsection{Inferring metabolism-wide flux using constraint-based modeling.}
+
+The stoichiometry and directionality of yeast reactions was determined using a modified version of the YEASTNET 7 \textit{Saccharomyces cerevisiae} genome-scale model \textcolor{red}{cite - not out yet} \cite{Herrgard:2008gb}.  Reactions were added which allowed for the production and breakdown of polyphosphates as well as the hydrolysis of ATP beyond a minimal ATP maintenance cost \cite{Famili:2003gl}.  Reactions which could not carry flux after enforcing reaction directionality and including boundary fluxes were removed, resulting in 2787 reactions involving 1843 metabolites that could carry non-zero flux (equivalent reactions and identical metabolites can be duplicated across compartments).
+
+In determining fluxes through metabolism, we need to balance multiple experimental measurements that do not entirely agree; for example, glucose uptake rate will not exactly match the rate that carbon is spent through excretion, loss of CO$_{2}$ and biomass production. We want to be able to find fluxes through metabolism (a flux distribution) that minimize the disagreement between our experimentally-measured fluxes and those that are possible at steady-state given mass balance.  For some reactions, individual experimental flux measurements correspond directly to single reactions that are already present in the yeast metabolic model (e.g. glucose uptake), while other reactions needed to be constructed such that they allowed covarying rates that monomers were consumed and the cost of their synthesis (e.g. RNA synthesis).  Using RNA synthesis as an example: when minimizing the disagreement between experimental fluxes, it would not make sense if the consensus estimate for UTP consumption were twice the experimental rate and the estimate for CTP consumption were half the experimental rate, given the relative rates of UTP and CTP being incorporated into RNA should be fixed and furthermore, they are informed by the same experimental measurement.  To avoid this pathology, we measure an expected rate of RNA synthesis and this may vary from a solution which is consistent with other flux measurements, however, we assume that the relative proportions of ATP, CTP, UTP and GTP used is constant and that for every ribonucleotide incorporated, two molecules of water are consumed and two phosphates are liberated per nucleotide assimilated.  Constructing boundary fluxes this way means that fractional deviations in experimental flux will be governed by the same relative uncertainty as our original measurements, with the same coefficient of variation, $\sfrac{\sigma_{x}}{x}$.
+
+For each experimental condition, a flux distribution vector ($\mathbf{j}$) was found that is optimally consistent with empirical boundary fluxes ($\hat{\mathbf{j}}$) and minimizes total flux carried.  The space of flux distributions is constrained by enforcing that all metabolites obey the steady-state assumption of flux balance ($\mathbb{S}\mathbf{j} = 0$) and also that flux directionality obeys manually annotated reversibility (v7).  This solution can be found using quadratic programming (equation \ref{QP}), where the residuals between each solution flux and a corresponding measured flux are weighted by the experimental precision ($\sigma^{-2}$) of that measurement, forming diagonal elements of $\Sigma^{\text{-}1}$.  Reactions whose rate was not measured, have a precision of zero, and thus will not contribute to the quadratic penalty.
+
+\begin{align}
+\text{min:} \hspace{5mm} (\hat{\mathbf{j}} - \mathbf{j})^{\text{T}}\mathlarger{\mathlarger{\Sigma}}^{\text{-1}}&(\hat{\mathbf{j}} - \mathbf{j}) + \mathsmaller{\sum_{k}^{K}}c|j_{k}| \notag\\[1em]
+\text{s.t.} \hspace{23mm} \mathlarger{\mathbb{S}}\mathbf{j} &= 0 \notag\\
+\hspace{5mm} j_{k}^{min} \le &j_{k} \le j_{k}^{max} \hspace{5mm}\forall k \in K \label{QP}
+\end{align}
+
+Because there might be multiple solutions to this problem which are optimal, this uncertainty can be at least partially be accounted for using flux variability analysis.  Instead of choosing a single optimal solution, flux variability analysis \textcolor{red}{cite} attempts to choose a range of fluxes through each reaction (\textit{i}) which are equally supported as an optimal solution ($\theta$).  This approach was implemented using quadratic constrained linear programming (QCLP) (equation \ref{FVA}).  
+
+\begin{align}
+\text{min/max:} \hspace{22mm} & j_{i}\hspace{5mm}\forall i \in I\notag\\[1em]
+\text{s.t.} \hspace{10mm} (\hat{\mathbf{j}} - \mathbf{j})^{\text{T}}\mathlarger{\mathlarger{\Sigma}}^{\text{-1}}&(\hat{\mathbf{j}} - \mathbf{j}) + \mathsmaller{\sum_{k}^{K}}c|j_{k}| \le \theta \notag\\
+\mathlarger{\mathbb{S}}\mathbf{j} &= 0 \notag\\
+\hspace{5mm} j_{k}^{min} \le &j_{k} \le j_{k}^{max} \hspace{5mm}\forall k \in K \label{FVA}
+\end{align}
+
+Both quadratic programming problems were solved using the Gurobi Optimizer \cite{Anonymous:WfN-MQJY}.
+
+\subsection{Extraction of proteins and mass spectrometry.}
+
+For each of 25 chemostat samples, 300 ml of chemostat media was filtered through a 0.8 $\mu$m Cellulose Acetate filter (CA089025, Sterlitech, Kent, WA) and immediately frozen in liquid nitrogen.  Samples were homogenized for 20 minutes using a Retsch CryoMill (Haan, Germany), and the homogenate was resuspended in 4\% SDS, 100 mM Tris pH 8, 1 mM DTT with Halt Protease and Phosphatase Inhibitor (78440, Thermo Scientific, MA).  After incubating at 98$^{o}$C for 20 minutes, samples were centrifugation at 24000g for 20 minutes.  The concentration of extracted protein was determined using Pierce BCA Protein Assay Kit (Thermo Scientific, MA).  Experimental samples were matched with an equal weight of $^{15}$N-labeled reference.  The reference sample was formed using a pair of phosphate-limited chemostats growing at a dilution rate of 0.05 h$^{-1}$ with $(^{15}NH_{4})_{2}SO_{4}$ as the only nitrogen-source.
+
+Each internally-labelled sample was digested using trypsin and fractionated based on isoelectric point using Off-Gel (Agilent Technologies, Santa Clara, CA). Each fraction was analyzed once by LC-MS/MS using an Agilent 6535 Q-TOF and twice on an Agilent 6550 Q-TOF.  \textcolor{red}{David, please provide technical guidance}.
+
+\subsection{Determining protein abundance and uncertainty.}
+
+Peptide identities based on fragmentation were shared between samples using an imputation technique based upon aligned retention time and shared \sfrac{m}{z} \textcolor{red}{cite JG if paper is out}. The log$_{2}$ relative abundance of light:heavy, experimental:reference pair of peptides was determined by integrating over time-slices with a consistent distribution of isotopologues. Peptide precision $\left(\sigma^{-2}\right)$ was determined based on how the signal:noise of heavy and light peptide pairs is related to the consistency of biological replicates.  This $\sigma(log_{2}\sfrac{S}{N})$ was scaled by a peptide-specific over-dispersion calculated based upon the inconsistent relative abundances of technical replicates.  Peptides which were unmeasurable in greater than 90\% of samples were discarded.  Patterns of peptide missing values were primarily missing completely at random (MCAR) and block-specific rather than being governed by biological conditions.  The probability distribution of each protein's log$_{2}$ relative abundance was found by combining the log$_{2}$ relative abundance of peptides using gaussian integrated likelihood.  A protein with \textit{n} unambiguously matching normally-distributed peptides with relative abundance $\textbf{X}_{ic}$ and variance $\sigma^{2}_{ic}$ for a condition \textit{c} would be distributed according to equation \ref{GIL}.
+
+\begin{align}
+\boldsymbol{\Omega}_{c} \sim \mbox{\Large $\mathbb{N}$}\left(\mu = \frac{\sum_{i = 1}^{n}\textbf{X}_{ic}\tau_{i}}{\sum_{i = 1}^{n}\tau_{i}}, \sigma^{2} =  \left(\sum_{i = 1}^{n}\frac{1}{\sigma^{2}_{i}}\right)^{-1} \right)\label{GIL}
+\end{align}
+
+$\tau_{z} = \prod_{i \neq z}^{n}\sigma^{2}_{i}$
+
+Having determining that patterns of missing values were MCAR, the relative abundance of proteins with no measured peptides in a condition could be determined through imputation, using knn-imputation \cite{Troyanskaya:2001uh}.  The precision of imputed proteins was set to the minimum precision when the protein was ascertained.
+
+\subsection{Determining metabolite relative abundance and uncertainty.}
+
+The Boer et al. 2010 MS-based metabolomics data \cite{main-Boer:2010fb} was reanalyzed so that both metabolite relative concentrations and residual metabolite covariances could be determined.  Residual covariance allows the uncertainty in a reaction form's predicted flux to be found using propagation of uncertainty of the variance of reaction species (see below).  In this experiment, for each treatment (25 growth conditions) relative abundance was measured from 4 replicates for each of two extraction methods.  It was observed that for some metabolites, one extraction method resulted in systematically larger peaks than the other method (an indication of more complete extraction \&/or less degradation).  To measure treatment-relative abundance while accounting for this for this extraction-effect, linear regression of log ion counts was performed, treating both treatment and extraction method as covariates.  From this regression, an estimate of metabolite/treatment-specific variance could be calculated from residuals inflated by the fitted degrees-of-freedom.  To determine the correlation of residuals, missing values in this 106 metabolite $\times$ 104 matrix were imputed using knn-imputation \cite{Troyanskaya:2001uh}, and this residual correlation matrix was shrunken towards the identity using a method based on James-Stein estimation \cite{Schaefer:2010tv}.
+
+\subsection{Determining absolute concentrations of metabolites.}
+
+Absolute concentrations of 55 metabolites measured in Boer et al. 2010 could be determined using pure standards of each metabolite.  To determine the abundance of most amino acids, unlabelled amino acids of known concentration were added into two $15^{N}$-labelled phosphate-limited chemostat samples.  These samples were CBZ-derivatized and analyzed by LC-MS in negative ionization mode as per Boer et al. 2010 \cite{main-Boer:2010fb}.
+
+The concentrations of metabolites that do not contain nitrogen were found through comparison to previously determined concentrations of 74 soluble metabolites measured during log-phase batch culture in minimal media with either glucose or glycerol/ethanol as a carbon source.  In order to align these measurements of metabolite concentrations to the 25 chemostat conditions, the relative concentration of a fast-growth rate (DR = 0.30) carbon-limited chemostat was compared to a contemporaneous batch-culture containing glucose as a carbon source.  Samples were analyzed by LC-MS in negative mode as per Xu et al. 2012 \cite{main-Xu:2012gg}.
+
+After determining concentrations of metabolites in chemostat samples which were biological replicates of a subset of Boer et al. 2010 samples, concentrations in the remaining chemostats could be found using the relative abundances from Boer et al. 2010.  In translating relative abundances to absolute abundances, only a point estimate of concentration-per-ion count was sought rather than our attempting to fully encompass the uncertainty in absolute concentrations.  This decision was due to our wishing to principally preserve the information present in the metabolite relative abundances, but with the additional context provided by having an approximate concentration.
+
+\subsection{Generating reaction forms.}
+
+To explore possible models of reaction kinetics, for each reaction, a model with no small molecule regulation (generalized Michaelis-Menten kinetics) was generated, as were alternative models involving one or more previously reported metabolite activators or inhibitors.  Possible regulators of each reaction (and substrate/product affinities) were queried based on E.C. number from BRENDA using the BRENDA SOAP API, drawing on both S. cerevisiae specific regulation and non-yeast regulation \cite{Scheer:2011df}.  All putative regulators were matched to ChEBI compounds \cite{Degtyarenko:2008hx} and their synonyms to determine if they were experimentally-measured.
+
+Each model of reaction kinetics was translated into a reaction form using an extended form of a convenience kinetics rate law, which assumes a random-order enzyme mechanism and is a generalized form of reversible MM kinetics \cite{main-Liebermeister:2006fm}. This convenience rate law convention was extended to explicitly account for reactant binding sites, allowing for competition of substrates and products for the same binding site and a mechanistically correct implementation of competitive inhibition. The generalized reaction with binding sites is given by equation \ref{rxn_form_eq1}.
+
+\begin{align}
+&\alpha_{1}A_{1} + \alpha_{2}A_{2} + ... \xleftrightarrow{E_{1}, E_{2}, ...} \beta_{1}B_{1} + \beta_{2}B_{2} + ...\notag\\
+&\left\{A_{i}, B_{j}, ...\right\} \in \Gamma_{n}\label{rxn_form_eq1}
+\end{align}
+
+Each substrate ($A_{i}$), and product ($B_{j}$) is assigned to one of the binding sites, $\Gamma_{n}$. A binding site might also contain multiple substrates, in the case of condensation reactions, or multiple products for cleavage reactions. All reactants are assigned a binding site. The corresponding reaction rate law is given by equation \ref{cc_law}.
+
+\begin{equation}
+j^{P} = \left(\sum_{h}E_{h} \cdot k^{h}_{cat}\right)\frac{\frac{1}{\prod_{i}k_{d}^{A_{i}}}\left(\prod_{i}A_{i}^{\alpha_{i}} - \frac{1}{k_{eq}} \prod_{j}B_{j}^{\beta_{j}}\right)}{\prod_{n}\left(1 + \sum_{R \in \Gamma_{n}} \sum_{m = 1}^{\gamma_{R}}\left(\frac{R}{k_{d}^{R}}\right)^{m} \right)}\label{cc_law}
+\end{equation}
+
+Where $\Gamma_{n}$ is the $n$-th binding site and $R \in \Gamma_{n}$ is a reactant in the binding site $\Gamma_{n}$ with a corresponding stoichiometric coefficient $\gamma_{R}$.
+
+Reactants were assigned to binding sites based on structural atom-pair similarity of substrates and products \cite{Cao:2008fa} based on structures found in ChEBI.  Small molecules (e.g. protons, oxygen) were assigned their own binding site.  Binding site predictions of substrates and products were manually verified.
+
+To generate reaction forms containing a potential regulator $D$: for allosteric activation and uncompetitive inhibition, a pre-multiplier was applied to equation \ref{cc_law}; for allosteric activation: $\sfrac{D}{(D + k_{a})}$, and for uncompetitive inhibition: $(\sfrac{1}{1 + \sfrac{D}{k_{i}}})$.  To assess the role of a competitive inhibition, an inhibitor was assigned to the binding site of the reactant with the greatest structural similarity.  Noncompetitive inhibition, where the inhibitor blocks both substrate binding and catalysis was implemented by adding this inhibitor as an uncompetitive and competitive inhibitor simultaneously with an identical inhibition constant.  
+
+\subsection{Fitting reaction forms to experimental data.}
+
+For every reaction form, constituting an algebraic relationship that translated enzyme and metabolite abundances into a prediction of flux, $j^{P} = g(M, E, \Omega)$, the set of kinetic parameters ($k_{d}, k_{cat}, k_{eq} \in \Omega$) that best approximates FBA-determined flux ($j^{F}$) with $j^{P}$, must be found.  In doing this, we want both an optimal parameter set (i.e. the maximum likelihood estimator of $\Omega$, $\hat{\Omega}$) and we would like to know how likely different parameter sets are, such that we can for instance form a credibility interval on $k_{d}$.
+
+The probabilistic relationship between any given parameter set, $\Omega$, and the experimental data can be found through a log-likelihood function $\ell(\Omega | M, E, j^{P})$, describing deviations between experimental flux measurements and parametric predictions as gaussian errors with dispersion given by the mean squared error, inflated based upon the fitted degrees of freedom (equation \ref{gausLik}). Metabolites that were not experimentally measured were treated as invariant.
+
+\begin{align}
+\ell(\Omega | M, E, j^{F}) &= \sum_{c = 1}^{25}ln\left[\mbox{\Large $\mathbb{N}$}\left(x = j^{F}_{c}; \mu = j^{P}_{c}, \sigma^{2} =  Var(j^{P})\right)\right]\notag\\
+Var(j^{P}) &= \frac{\sum_{c = 1}^{25} (j^{F}_{c} - j^{P}_{c})^2}{25 - \left\vert{\Omega}\right\vert}\label{gausLik}
+\end{align}
+
+Because $j_{c}^{F}$ is not truly a point estimate, but rather a uniform density between some lower $(j_{c}^{F-})$ and upper bound $(j_{c}^{F+})$ established through flux variability analysis, this log-likelihood function is extented to reflect the average point density over this interval in each condition (equation \ref{gausLik_integral}).
+
+\begin{align}
+\ell(\Omega | M, E, j^{F}) &= \sum_{c = 1}^{25}ln\left[\frac{1}{j_{c}^{F+} - j_{c}^{F-}}\mathlarger{\int}\limits_{j_{c}^{F} = j_{c}^{F-}}^{j_{c}^{F+}} \mbox{\Large $\mathbb{N}$}\left(x = j^{F}_{c}; \mu = j^{P}_{c}, \sigma^{2} =  Var(j^{P})\right)dj^{F}_{c}\right]\notag\\
+Var(j^{P}_{c}) &= \frac{\sum_{c = 1}^{25} \left(\frac{j^{F-}_{c} + j^{F+}_{c}}{2} - j^{P}_{c}\right)^2}{25 - \left\vert{\Omega}\right\vert}\label{gausLik_integral}
+\end{align}
+
+Using Metropolis-Hastings Markov Chain Monte-Carlo, we can propose a change in parameter values which is accepted proportional to the likelihood, $\mathbb{L}(\Omega | M, E, j^{P})$.  This process is repeated until the parameter set posterior draws converges to a stationary distribution which is asymptotically equal to the joint probability distribution over all parameters.  This allows us to simultaneously obtain a probability distribution for each kinetic parameter, as well as to perform stochastic optimization to find the ``best'' parameter sets.
+
+In practice, to simplify the search for parameters and to reduce the numbers of parameters which need to be found through stochastic optimization, every reaction form is broken into two pieces: a non-linear fraction of maximal activity involving the interaction of metabolites, affinities and k$_{eq}$ (i.e. for michaelis-menten kinetics: $\mathbb{O} = \frac{[S]}{[S] + k_{M}}$) and a linear scaling of maximal activity by enzyme activity (i.e. $j^{P} = (k_{cat}[E]\mathbb{O})$).  $k_{d}$ values are kinetically important only when compared to the magnitude of metabolite concentrations, with $\sfrac{\partial j^{P}}{\partial S} = 0$ when $[S] >> k_{d}$, and $\sfrac{\partial j^{P}}{\partial S} = 1$ when $[S] << k_{d}$.  To span these extremes and the partial responsiveness in-between, relevant $k_{d}$ were drawn in log$_{2}$-space from a uniform distribution, $p(k_{d}) \sim unif(-15 + log_{2}(\text{median}\left\{M\right\}), 15 + log_{2}(\text{median}\left\{M\right\})$).  $k_{eq}$ has a similar relationship to the reaction quotient $\mathbb{Q}_{r}$ (but was sampled with a slightly larger log$_{2}$-uniform range of 40), allowing us to span meaningful values of free energy using a log-uniform distribution centered around $log_{2}\mathbb{Q}$.  Constraining $k_{d}$ and $k_{eq}$ values to reside within bounds, which either contain the true parameter (or result in quantitatively indistinguishable behavior), allows us to restrict our search of $l(\mathbb{O}|k_{d}, k_{eq})$ to this hyperrectangle.  For any vector, $\mathbb{O} = g(M, k_{d}, k_{eq})$, the MLE of k$_{cat}$ parameters can be found using non-negative least squares (NNLS) regression by treating $[E]\mathbb{O}$ as predictors, $\sfrac{(j^{F-} + j^{F+})}{2}$ as a response and conditioning that all $k_{cat} \ge 0$.
+
+\textbf{Pseudocode}
+
+For a single reaction with \textit{J} optimized parameters tracked over the course of \textit{I} sets of metropolis updates, the joint values of these kinetic parameters can be optimized using algorithm \ref{MCMCalg}.
+
+\begin{algorithm}[H]\vspace{2mm}
+ \KwIn{Metabolite concentrations ($M$), enzyme concentrations ($E$), measured flux ($j^{F}$)}
+ \KwOut{Distribution of kinetic parameters, $\Omega$ ($k_{M}, k_{cat}, k_{eq} \in \Omega$), $|\Omega|$ = K.}\vspace{2mm}
+ Initialization:\\
+ \Begin{
+ \For{$k \leftarrow 1$ \KwTo $K$
+ }{$\Omega^{current}_{k}$ drawn from uniform prior}
+ Calculate $\mathbb{O}^{current} = g(M, \Omega^{current})$ using reaction form\\
+ Find $k_{cat}$ parameters using NNLS\\
+ Update $\ell^{current} = \ell(\Omega^{current} | M, E, j^{F})$
+}
+Iteration:\\
+\For{$i \leftarrow 1$ \KwTo $I$
+}{
+\For{$k \leftarrow 1$ \KwTo $K$
+}{
+$\Omega^{proposed}_{k}$ drawn from uniform prior\\
+calculate $\mathbb{O}^{proposed}$ and $k_{cat}$ values\\
+$\ell^{proposed} = \ell(\Omega^{proposed} | M, E, j^{F})$\\
+draw \textit{d} from unif(0, 1)\\
+\If{$\ell^{proposed} > \ell^{current}$ or \textit{d} $< \frac{exp(\ell^{proposed})}{exp(\ell^{proposed}) + exp(\ell^{current})}$:}{
+$\Omega^{current} = \Omega^{proposed}$\\
+$\ell^{current} = \ell^{proposed}$
+}
+}
+$\Omega_{i}^{track} = \Omega^{current}$
+}
+\KwRet{$\Omega^{track}$}\vspace{2mm}
+\caption{MCMC-NNLS inference of kinetic parameters}
+\label{MCMCalg}
+\end{algorithm}
+
+Metropolis-Hastings MCMC suffers from the possible problem of non-independence of parameter sets if there is only a small number of parameter with a moderate likelihood.  When this occurs it will take many iterations for the Markov chain to reach a stable posterior distribution.  Because the parameters that we are testing are all constrained to relatively tight marginal uniform distribution, parameter space can be effectively explored with this method.  To decrease the non-independence of samples, the first 8000 samples from the Markov chain were removed as a burn-in, and afterwards, only one of every 300 samples was saved until a total of 200 Markov samples had been generated.  To test for convergence and increase the number of posterior samples, each Markov chain was run 10 times from different initial conditions.  Comparing the 10 Markov chains from each model using multivariate potential scale reduction factor (MPSRF)\cite{Brooks:1997um} confirmed that for all models tested, the Markov chains had converged to a stable posterior distribution.
+
+Setting up the problem this way, we end with a chain of 1000 estimates of $\Omega$ each with a corresponding likelihood.  This posterior distribution forms an empirical joint probability distribution of $\Omega$.  To find the MLE of equation \ref{gausLik_integral}, we can take the parameter set, $\Omega$ that maximizes the log-likelihood and treat this as $\hat{\Omega}$.   Univariate confidence intervals for individual parameters can be found from the marginal posterior distribution of that parameter.  Dependencies between parameters such as $k^{A}_{M} > k^{B}_{M}$ can be seen as correlation or other dependence in the bivariate posteriors.\\
+
+\subsection{Allowing for cooperativity of regulator binding}
+
+Cooperative binding of regulators was assessed for each literature-informed allosteric activator or uncompetitive inhibitor by adding an appropriate hill coefficient to the pre-multiplier: for allosteric activation: $(1 + (R/k_{a})^n)$ and for uncompetitive inhibition: $(\sfrac{1}{1 + (R/k_{i})^n)})$.  To determine the likelihood of parameters sets including variable hill coefficients ($n \in (0,\infty)$), hill coefficients were modeled using a spike-and-slab prior.  When proposing a value of $n$: there was 50\% probability that n was set equal to one (reflecting no cooperativity) and a 50\% probability that n was drawn from a log-normal distribution with mean of zero and a standard deviation of 0.5.  This prior reflects that most binding is expected to be non-cooperative and thus there is a point-mass at zero, and the log-normal distribution provides symmetry of negative cooperativity (n $<$ 1) and positive cooperativity (n $>$ 1) about non-cooperativity (n = 1).
+
+\subsection{Evaluating support for individual reaction forms.}
+
+For a given reaction, we need to be able to determine how well a reaction equation fits in a way that facilitates the statistical comparison of alternative parameterizations of the reaction form.  To this end, elaborations of the reaction form were considered relative to a default of reversible michaelis-menten kinetics to determine if changes in model likelihood were significant when viewed in the context of differences in the number of fitted parameters.  When comparing nested models with differing numbers of degrees of freedom, a likelihood ratio test was used.  In this situation, the likelihood will increase when \textit{p} free parameters are added, and the increase in the log-likelihood under the null hypothesis that this free parameter is actually irrelevant is related to a $\chi^{2}_{p}$ distribution allowing the relative probability of a reduced and full model to be evaluated ($-2\bigtriangleup\ell \sim \chi^{2}_{p}$).
+
+Models containing a measured regulator were compared to the reaction's generalized Michaelis-Menten kinetics, in effect comparing a model with zero regulator affinity ($k_{i}$/$k_{a} = \infty$) to an alternative model where $k_{i}$ or $k_{a}$ is relevant.  Using the MLE of each reaction form, p-values for all alternative reaction forms were determined and significant regulation was found at a false discovery rate (FDR) of 0.05 \cite{Storey:2003cj}.  It should be noted that this significance does not represent the chance that a given tested regulatory model is correct, as we are effectively test multiple mutually exclusive models of regulation (which may be very similar), rather we want to identify all models of regulation that improve fit more than would be expected by chance.
+
+When testing complex regulation, either where cooperativity or joint regulation by multiple metabolites was tested, a single daughter alternative model has to be compared to multiple simpler parent models.  The role of regulator cooperativity was tested by comparing the fit of a model with regulator cooperativity to both a model with no cooperativity and to a model with no meaningful regulation.  For each of these classes of daughter to parent model comparisons (cooperative regulation versus MM-kinetics \& versus non-cooperative regulation), p-values were treated separately and FDR-corrected to determine their q-value.  The significance (q-value) of a cooperative reaction form was found as the maximal q-value over all classes of compared model.  When testing the significance of pairwise regulation, a model containing two regulators was compared to both models including its component regulation.  Because the only models of pairwise regulation tested were built off of one already significant solitary regulator, an additional comparison to a model lacking regulation was unnecessary.  The significance (q-value) of a model of combined regulation was treated as the maximum q-value from both comparisons to models with a single regulator.
+
+\subsection{Literature support for regulation.}
+
+For some reactions, our method was able to clearly prioritize one regulatory hypothesis over alternative contenders.  In other cases, multiple regulators that are highly correlated have each been noted in the literature, and each results in a similar degree of quantitative consistency.  To determine whether literature support could help to discriminate such cases, we determined whether each single regulator's significance (q $\le$ 0.05 versus q $>$ 0.05) was related to its literature support in two ways.  First, the best-supported yeast regulation was treated as a gold-standard (\textcolor{red}{table XXX}) and the significance of these regulatory mechanisms were assessed relative to other regulation using a goodness-of-fit test.  Second, to assess the impact of other factors on model support, we performed weighted logistic regression to test the role of five main effects across the \textcolor{red}{number} regulator-reaction pairs investigated (equation \ref{literature_logistic_regression}).  These effects were: (1) $inhibitor$, an indicator variable distinguishing activators from inhibitors, (2) $sce$, the number of regulator-reaction citations in \textit{S. cerevisiae} relative to all regulatory citations for that reaction, (3) $other$, the number of non-cerevisiae regulator-reaction citations relative to all regulatory citations for that reaction, (4) $GS$, an indicator variable indicating whether the regulator is an instance of canonical yeast regulation, (5) $observations$, the total number of regulator-reaction citations for this reaction.  To prevent the best studied reactions from dominating the analysis, each reaction was normalized such that its weight over all regulators equaled one \textcolor{red}{better specify weights}. This regression model had the lowest Akaike Information Criterion (AIC) of all alternative models tested.
+
+\begin{align}
+log\left(\sfrac{p(sig)_{i}}{(1-p(sig)_{i})}\right) &= inhibitor_{i} + sce_{i} + other_{i} + GS_{i} + observations_{i} \notag\\
+weight_{i} &= (other_{i} + sce_{i})/observation_{i} \label{literature_logistic_regression}
+\end{align}
+
+This analysis showed that four of the main effects strongly predict significance (inhibitor, other, GS and observations) and can thus serve as a basis to suggest which regulatory interactions are inherently more plausible.  Using an empirical Bayes approach, the fitted values of this regression can form a prior, p(Model), which along with the likelihood of each regulatory mechanism, p(Data$|$Model) can be adjusted to  form a Bayes Factor, p(Data$|$Model)p(Model).  When multiple regulators were considered, the prior probability of joint regulation was constructed as the product of each regulators prior probability.
+
+\subsection{Predicting the most likely reaction form for each reaction.}
+
+For each reaction, the generalized Michaelis-Menten kinetics reaction form and all regulatory reaction forms that significantly improve fit (q $<$ 0.05) were simultaneously considered.  The relative support for each model was corrected for overparameterization by using the Akaike Information Criterion with correction (AICc) (equation \ref{AICc}).
+
+\begin{equation}
+2k - 2ln(p(Data|Model)p(Model)) + \sfrac{2k(k+1)}{(n-k-1)}\label{AICc}
+\end{equation}
+
+The reaction form with the lowest AICc was considered most plausible and used to summarize reaction behavior.  In addition, other regulatory mechanisms which were also supported, albeit to a lesser degree, were organized by clustering regulators based on correlation and similar pairwise interactions.  These alternative regulators are reported in table \textcolor{red}{table SYYY}.
+
+\subsection{Evaluating how well reaction forms fit given experimental uncertainty.}
+
+Since we are positing that our measurements are sufficient to predict the flux through a reaction, our uncertainty in these measurements can be directly used to calculate our uncertainty in our prediction.  Using all measured species of enzymes and metabolites involved in a reaction ($\mathbb{S} = \mathbb{E} \cup \mathbb{M}$), the resulting uncertainty in $j^{P}$ due to uncertainty in these species can be found using equation \ref{propUncertainty}.
+
+\begin{equation}
+Var(j^{P}_{c}) = \left(\sfrac{\partial j^{P}_{c}}{\partial\mathbb{S}_{c}}\right)^{T}\Sigma\left(\sfrac{\partial j^{P}_{c}}{\partial\mathbb{S}_{c}}\right)\label{propUncertainty}
+\end{equation}
+
+$\Sigma$ is a square residual covariance matrix (if 4 measured metabolites and 2 proteins = 6 x 6 matrix) where diagonal entries are the variance of species in condition \textit{j} and off-diagonal entries are covariances between species (i.e. how correlated is the measurement error of two species weighted by their residual uncertainty).  Covariances between proteins were unknown and assumed be zero, while correlations between metabolites were calculated as above.
+
+\subsection{Testing the support for metabolite regulators without using literature supervision.}
+
+In many organisms, it is likely that there are some metabolites that meaningfully regulate enzymes but this regulation has yet to be posited or tested in the literature.  To allow for such purely novel regulation, we want to be able to test which (if any) measured metabolite are best supported as regulators.  Rather than exhaustively testing all metabolites, an approach that would be unfavorable in terms of both in terms of computational costs and multiple hypothesis testing, we can consider that patterns of metabolite relative abundance across our 25 conditions are not generally unique, but rather metabolite covary in predictable ways.  
+
+Patterns of metabolite variation across our 25 conditions can be reduced to six principle components that collectively explain 99\% of the variance in metabolite abundance.  Since the quantitative importance of given metabolite in our method is due to its pattern of relative abundance, and the pattern of relative abundance of any metabolite can be accurately approximated as a linear combination of six principle components, these principle components can be used to adaptively explore how a hypothetical regulator would optimally regulate a reaction.  To implement this approach, the six major principle components of the metabolomics log$_{2}$ matrix (DV$^{T}$) were fixed and the loadings of these principle components ($\upsilon_{1}, \upsilon_{2}, ..., \upsilon_{6}$) were treated as parameters.  During optimization, loadings were drawn from a normal prior, based on the empirical mean and variance of the real metabolites' loadings.  From these loadings, the relative abundance of the hypothetical regulator could be reconstructed ($\upsilon DV^{T}$) and it can be treated analogously to a measured allosteric activator or uncompetitive inhibitor.  Thus, this inference involves iteratively fitting the kinetic role of reaction species and constructing the trend of an optimal hypothetical regulator.  These hypothetical inhibitor and activators can then be compared to measured metabolites to determine which measured candidates are the strongest unsupervised candidate regulators.
+
+When determining whether the increase in fit of a model containing a hypothetical activator or inhibitor relative to a model lacking regulation (or containing literature-suggested regulation) is more than would be expected by chance, the large difference in degrees of freedom (six loadings + one $k_{i}/k_{a}$) relative to the sample size (25) would make the likelihood ratio test anti-conservative.  Instead, a more general approach based on relative likelihood using Akaike Information Criterion with correction (AICc) was adopted.  AICc stringently penalizes over-parametrized models and thus a model containing hypothetical regulation will only have a lower (better) AICc than a minimal model if the improvement in fit is substantial.  When discrimination between two models, one with hypothetical regulation ($M_{hypo}$) and one model with no regulation ($M_{mm}$), the relative support for $M_{hypo}$ is $p(M_{hypo}) = 1 - 1/(exp(\sfrac{M_{hypo} - M_{mm}}{2}) + 1)$.
+
+\subsection{Experimental verification of predicted regulation.}
+
+For each of four enzymes (Arg3, Aro3, Aro4, and His1), a C-terminal 6-His affinity tag was attached to the native protein (from BY4742) and incorporated into a p426Gal plasmid.  This plasmid was transformed into DBY12045, MAT\textbf{a}, ura3$\bigtriangleup$0 to generate the fusion-strains Arg3-His6, Aro3-His6, Aro4-His6 and His1-His6.  Protein expression was induced by first growing overnight cultures until an OD$_{600}$ of 0.6 on SC - URA media + 2\% Raffinose, followed by 12 hours of induction on SC - URA media + 2\% Galactose.  Total protein was extracted through mechanical homogenization in the presence of Y-PER reagent (Thermo Scientific, MA) containing 10 $\mu$l/ml EDTA-free HALT protease inhibitors (Thermo Scientific, MA) and 2 mM PMSF.  Tagged enzymes were purified using HisPur Cobalt Spin Columns (Thermo Scientific, MA) and successful purification was confirmed by SDS-PAGE.
+
+ATP-phosphoribosyltransferase (ATP-PRTase: His1) activity was tracked using the approach of Pedreno et al. 2012 \cite{Pedreno:2012hv} by following the accumulation of the product phosphoribosyl-ATP at 290 nm ($\epsilon_{290}$ = 3.6 mM$^{-1}$cm$^{-1}$).  Initial concentrations were: 400 $\mu$M PRPP, 800 $\mu$M ATP, 30 mU/ml pyrophosphatase (Sigma Aldrich), 7 mM MgCl$_{2}$, 200 mM KCl in 50 mM Tris-HCl (pH 8.5).
+
+3-deoxy-D-arabino-heptulosonate 7P (DAHP synthase: Aro3 and Aro4) activity was tracked using the approach of Furdui et al. 2004 \cite{Furdui:2004bk} by following the consumption of phosphoenolpyruvate (PEP) at 232 nm ($\epsilon_{232}$ = 2.84 mM$^{-1}$cm$^{-1}$). Initial concentrations were: 400 $\mu$M Erythrose 4-phosphate, 200 $\mu$M PEP, 1 mM BME, 10 $\mu$M ZnCl$_{2}$ in 50 mM Tris-HCl (pH 7.0).  
+
+Ornithine transcarbamylase (OTCase: Arg3) activity was tracked by adapting an NADP-coupled assay that was originally used to track aspartate transcarbamylase activity \cite{Foote:1981to}. Initial concentrations were 5 mM ornithine, 100 $\mu$M carbamoyl phosphate, 0.8 mg/ml glycogen, 0.6 mM NADP+, 0.5 U/ml glycogen phosphorylase a (Sigma Aldrich), 0.24 U/ml phosphoglucomutase (Sigma Aldrich), 0.85 U/ml glucose 6-phosphate dehydrogenase (Sigma Aldrich), 2 $\mu$M glucose 1,6-bisphosphate, 20 $\mu$M AMP in 10 mM Tris, 10 mM Bis-Tris, 10 mM CAPS, 4 mM DTT, 0.4 mM MgCl$_{2}$, pH 7.0 buffer.  Because this approach tracks phosphate liberated from carbamyl phosphate, it was necessary to minimize both the amount of contaminating phosphorous and the amount of non-enzymatic phosphate released through the spontaneous breakdown of carbamoyl phosphate.  To determine activity, all reagents except carbamoyl phosphate were combined and incubated for one hour at room temperature to consume contaminating phosphate, and carbamoyl phosphate was added to initiate the assay.  The use of Arg3p-free blanks allowed the non-enzymatic breakdown of carbamoyl phosphate to be accurately tracked, and this predictable baseline could be removed from assays including Arg3p. 
+
+\subsection{Determining metabolic leverage.}
+
+Kacser $\&$ Burns 1973 \cite{main-Kacser:1973fe} explored the idea of how changes in metabolite and enzyme concentrations alter pathway flux, specifically saying that the fractional change in flux is proportional to the product of the reaction's pathway control coefficient, the specie's elasticity $\left(\epsilon = \frac{\partial F}{\partial S}\frac{[S]}{F}\right)$ and a fractional change in this specie's concentration (Kacser $\&$ Burns 1973, equation 8).  This relationship implies that the total change in flux due to a single reaction specie when transitioning from one state to another could be found according to equation $\ref{KBequation}$.  Unfortunately both elasticities and pathway control coefficients change across this integral in ways that would be difficult to predict for all but the most comprehensively understood systems.
+
+\begin{equation}
+\frac{\bigtriangleup j}{j} = \mathlarger{\int\limits_{s = \left[S_{i}\right]}^{\left[S_{f}\right]}}\epsilon_{s}(s)C(s)ds
+\label{KBequation}
+\end{equation}
+
+To conceptually simplify this approach, we can logically segregate changes in pathway flux into two terms. First, if a reaction specie's concentration changes, this change in concentration in an isolated system (i.e. as is the case during \textit{in vitro} biochemistry) will be governed by the specie's elasticity, $\epsilon$. Second, changes in flux due to this reaction will only affect pathway flux in line with this reaction's pathway control coefficient.  The changes in reaction species and their resulting marginal effects for each reaction will result in the same change in flux as the change in pathway flux regardless of whether these effects are causal drivers or responding to other pathway reactions. To approach metabolic control, we can first determine how reaction species drive variable reaction flux and later determine which reaction(s) are ultimately driving pathway flux.
+
+To create a general picture of how yeast alters flux through a reaction across all nutrient conditions, rather than considering a transition from one steady-state to another, we want to summarize the role of reaction species across all nutrient conditions.  To do this, we consider an average condition and determine how flux through this condition would be affected by the magnitude of natural variation in metabolite and enzyme concentrations across all natural nutrient conditions (only considering chemstats limited for carbon, nitrogen and phosphorous).  Specifically, for a reaction involving \textit{N} reaction species (metabolites and enzymes), the metabolic leverage ($\psi$) of each specie \textit{k} was calculated to summarize its relative contribution to the total variable flux through the reaction (Equation \ref{ML}).  
+
+\begin{align}
+&\psi_{k} = \frac{\left|\epsilon_{k}\right|\sigma_{k}}{\sum_{n = 1}^{N}\left|\epsilon_{n}\right|\sigma_{n}}\label{ML}\\
+\sum_{n = 1}^{N} &\psi_{n} = 1\notag
+\end{align}
+
+Here, $\sigma_{k}$ is the log-space standard deviation of specie \textit{k} $\left(\sigma\left(log_{2}\left[S_{k}\right]\right)\right)$, across all natural conditions (phosphate, carbon and nitrogen limited chemostats).  The value of reaction elasticity used for each specie $\left(\epsilon_{k}\right)$ was found by first calculating the elasticity of each specie $\left(\epsilon = \frac{\partial F}{\partial S}\frac{[S]}{F}\right)$ for each Markov sample and condition, and then finding a consensus by finding the median first over Markov samples and then over conditions. 
+
+\subsection{Building a model of glycolytic control.}
+
+To demonstrate how our physiological reaction forms can be used to guide bottom-up reconstruction approaches that can be interpreted using metabolic control analysis, we created a model of glycolysis using inferred reaction forms of five glycolytic reactions.  In creating this model, the near-equilibrium reactions triose phosphate isomerase, phosphoglycerate mutase and enolase were removed and their substrates and products were pooled into freely-mixing pools.
+
+For each Markov sample and nutrient condition, one summation theorem and four connectivity theorems were used to solve for the pathway control coefficients of each of the five reactions and the concentration control coefficients of each reaction for the four pathway metabolites (Equation \ref{MCAmat}) \cite{main-Westerhoff:1987jo}.  An alternative model without the feed-forward activation of pyruvate kinase by fructose 1,6-bisphosphate was considered where $\epsilon^{PyK}_{FBP}$ equaled zero.  
+
+\begin{align}
+\mathbb{M} &= \begin{bmatrix*}[l]
+  1 & 1 & 1 & 1 & 1 \\
+  \epsilon^{PFK}_{FBP} & \epsilon^{ALD}_{FBP} & 0 & 0 & \epsilon^{PyK}_{FBP} \\
+  0 & \epsilon^{ALD}_{GA3P} & \epsilon^{GAPDH}_{GA3P} & 0 & 0 \\
+  0 & 0 & \epsilon^{GAPDH}_{1,3BPG} & \epsilon^{PGK}_{1,3BPG} & 0 \\
+  0 & 0 & 0 & \epsilon^{PGK}_{3PG} & \epsilon^{PyK}_{3PG} \\
+ \end{bmatrix*}\notag\\\notag\\
+  \mathbb{C} &= \mathbb{M}^{-1}\notag\\\notag\\
+ \mathbb{C} &= \begin{bmatrix*}[l]
+  C^{J}_{PFK} & -C^{FBP}_{PFK} & -C^{GA3P}_{PFK} & -C^{1,3BPG}_{PFK} & -C^{3PG}_{PFK} \\
+  C^{J}_{ALD} & -C^{FBP}_{ALD} & -C^{GA3P}_{ALD} & -C^{1,3BPG}_{ALD} & -C^{3PG}_{ALD} \\
+  C^{J}_{GAPDH} & -C^{FBP}_{GAPDH} & -C^{GA3P}_{GAPDH} & -C^{1,3BPG}_{GAPDH} & -C^{3PG}_{GAPDH} \\
+  C^{J}_{PGK} & -C^{FBP}_{PGK} & -C^{GA3P}_{PGK} & -C^{1,3BPG}_{PGK} & -C^{3PG}_{PGK} \\
+  C^{J}_{PyK} & -C^{FBP}_{PyK} & -C^{GA3P}_{PyK} & -C^{1,3BPG}_{PyK} & -C^{3PG}_{PyK}
+ \end{bmatrix*}\label{MCAmat}
+\end{align}
+
+

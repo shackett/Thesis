@@ -2,72 +2,56 @@
 \contentsline {section}{List of Figures}{v}{section*.5}
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
 \contentsline {subsection}{\numberline {1.0.1}Harnessing the power of systems biology}{2}{subsection.1.0.1}
-\contentsline {subsection}{\numberline {1.0.2}Towards understanding how metabolism is controlled}{3}{subsection.1.0.2}
-\contentsline {subsection}{\numberline {1.0.3}Integrative `omic approaches to identify metabolic and post-transcriptional regulation}{4}{subsection.1.0.3}
+\contentsline {subsection}{\numberline {1.0.2}Towards understanding metabolic control}{3}{subsection.1.0.2}
+\contentsline {subsection}{\numberline {1.0.3}Integrative `omic approaches for identifying metabolic and post-transcriptional regulation}{4}{subsection.1.0.3}
 \contentsline {chapter}{\numberline {2}Statistical Analysis of Mass Spectrometry Data}{8}{chapter.2}
 \contentsline {section}{\numberline {2.1}Statistical Properties of Mass Spectrometry Data}{9}{section.2.1}
 \contentsline {subsection}{\numberline {2.1.1}Background}{9}{subsection.2.1.1}
-\contentsline {subsection}{\numberline {2.1.2}Results $\&$ Discussion}{11}{subsection.2.1.2}
+\contentsline {subsection}{\numberline {2.1.2}Results $\&$ discussion}{11}{subsection.2.1.2}
 \contentsline {section}{\numberline {2.2}Analysis of Mass Spectrometry Data}{16}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1}Identifying a Metabolomic Signature of Protein Eating in Pancreatic Tumors}{17}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.1}Identifying a metabolomic signature of protein eating in pancreatic tumors}{17}{subsection.2.2.1}
 \contentsline {subsubsection}{Data normalization and processing}{17}{section*.14}
-\contentsline {subsubsection}{Quantifying the significance of tumor:normal differences:}{18}{section*.16}
+\contentsline {subsubsection}{Quantifying the significance of tumor:benign differences}{18}{section*.16}
 \contentsline {subsubsection}{A bootstrap approach for estimating significant differences between paired samples}{20}{section*.18}
 \contentsline {subsubsection}{A metabolomic signature of protein eating in pancreatic tumors}{21}{section*.19}
 \contentsline {subsection}{\numberline {2.2.2}Genetic variation affecting metabolite concentrations in yeast}{22}{subsection.2.2.2}
-\contentsline {subsection}{\numberline {2.2.3}Quantitative proteomics reveals targets of autophagy}{27}{subsection.2.2.3}
-\contentsline {chapter}{\numberline {3}An integrative `omics approach to quantitative analysis of physiological metabolic flux control}{23}{chapter.3}
-\contentsline {section}{\numberline {3.1}Introduction}{23}{section.3.1}
-\contentsline {section}{\numberline {3.2}Results}{25}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Data collection.}{25}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}Analysis of triose-phosphate isomerase reaction with SLIMER.}{26}{subsection.3.2.2}
-\contentsline {subsection}{\numberline {3.2.3}Identifying physiological regulation.}{27}{subsection.3.2.3}
-\contentsline {subsection}{\numberline {3.2.4}Global analysis.}{29}{subsection.3.2.4}
-\contentsline {subsection}{\numberline {3.2.5}Assessing how metabolites and enzymes change flux.}{30}{subsection.3.2.5}
-\contentsline {section}{\numberline {3.3}Discussion}{31}{section.3.3}
-\contentsline {section}{\numberline {3.4}Materials and Methods}{34}{section.3.4}
-\contentsline {subsection}{\numberline {3.4.1}Strains and culture conditions.}{34}{subsection.3.4.1}
-\contentsline {subsection}{\numberline {3.4.2}Determining metabolite uptake and excretion rates through $^{1}$H-NMR.}{34}{subsection.3.4.2}
-\contentsline {subsection}{\numberline {3.4.3}Determining the rate of synthesis of biomass components.}{35}{subsection.3.4.3}
-\contentsline {subsection}{\numberline {3.4.4}Inferring metabolism-wide flux using constraint-based modeling.}{38}{subsection.3.4.4}
-\contentsline {subsection}{\numberline {3.4.5}Extraction of proteins and mass spectrometry.}{39}{subsection.3.4.5}
-\contentsline {subsection}{\numberline {3.4.6}Determining protein abundance and uncertainty.}{40}{subsection.3.4.6}
-\contentsline {subsection}{\numberline {3.4.7}Determining metabolite relative abundance and uncertainty.}{40}{subsection.3.4.7}
-\contentsline {subsection}{\numberline {3.4.8}Determining absolute concentrations of metabolites.}{41}{subsection.3.4.8}
-\contentsline {subsection}{\numberline {3.4.9}Generating reaction forms.}{41}{subsection.3.4.9}
-\contentsline {subsection}{\numberline {3.4.10}Fitting reaction forms to experimental data.}{42}{subsection.3.4.10}
-\contentsline {subsection}{\numberline {3.4.11}Allowing for cooperativity of regulator binding}{45}{subsection.3.4.11}
-\contentsline {subsection}{\numberline {3.4.12}Evaluating support for individual reaction forms.}{45}{subsection.3.4.12}
-\contentsline {subsection}{\numberline {3.4.13}Literature support for regulation.}{46}{subsection.3.4.13}
-\contentsline {subsection}{\numberline {3.4.14}Predicting the most likely reaction form for each reaction.}{47}{subsection.3.4.14}
-\contentsline {subsection}{\numberline {3.4.15}Evaluating how well reaction forms fit given experimental uncertainty.}{47}{subsection.3.4.15}
-\contentsline {subsection}{\numberline {3.4.16}Testing the support for metabolite regulators without using literature supervision.}{48}{subsection.3.4.16}
-\contentsline {subsection}{\numberline {3.4.17}Experimental verification of predicted regulation.}{49}{subsection.3.4.17}
-\contentsline {subsection}{\numberline {3.4.18}Determining metabolic leverage.}{50}{subsection.3.4.18}
-\contentsline {subsection}{\numberline {3.4.19}Building a model of glycolytic control.}{51}{subsection.3.4.19}
-\contentsline {chapter}{\numberline {4}Multiple Sources of Regulation Impact Nutrient-Dependent Protein Expression in Yeast}{52}{chapter.4}
-\contentsline {section}{\numberline {4.1}Introduction}{52}{section.4.1}
-\contentsline {section}{\numberline {4.2}Results}{55}{section.4.2}
-\contentsline {section}{\numberline {4.3}Discussion}{63}{section.4.3}
-\contentsline {section}{\numberline {4.4}Materials and Methods}{66}{section.4.4}
-\contentsline {subsection}{\numberline {4.4.1}Processing and alignment of input data}{66}{subsection.4.4.1}
-\contentsline {subsection}{\numberline {4.4.2}Testing the correlation between protein and transcript relative abundances}{67}{subsection.4.4.2}
-\contentsline {subsection}{\numberline {4.4.3}Identifying gene sets associated with variation in proteins-per-transcript}{68}{subsection.4.4.3}
-\contentsline {chapter}{\numberline {5}Conclusion \& Future Work}{71}{chapter.5}
-\contentsline {section}{\numberline {5.1}Conclusion}{71}{section.5.1}
-\contentsline {subsection}{\numberline {5.1.1}Understanding the structure and regulation of metabolism}{72}{subsection.5.1.1}
-\contentsline {subsubsection}{Characterizing physiological regulation in yeast metabolism}{73}{section*.8}
-\contentsline {subsubsection}{How coordination of the metabolism and proteome leads to nutrient-dependent growth control}{74}{section*.9}
-\contentsline {subsection}{\numberline {5.1.2}Understanding how enzyme levels are regulated}{76}{subsection.5.1.2}
-\contentsline {section}{\numberline {5.2}Future Work}{77}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}Achieving a quantitative understanding of metabolism}{78}{subsection.5.2.1}
-\contentsline {subsubsection}{Metabolomic incompleteness}{78}{section*.10}
-\contentsline {subsubsection}{Improving the precision of flux estimation}{79}{section*.11}
-\contentsline {subsubsection}{Mis-characterization of enzyme activity and kinetic differences between iso-enzymes}{81}{section*.13}
-\contentsline {subsubsection}{Is the ``well-mixed'' assumption appropriate?}{83}{section*.14}
-\contentsline {subsubsection}{Evaluating the veracity of modeling assumptions}{86}{section*.15}
-\contentsline {subsubsection}{Application of SLIMER using more comprehensive data, broader conditions and new organisms}{87}{section*.16}
-\contentsline {subsubsection}{Translating reaction-level kinetics into metabolism-level predictions}{88}{section*.17}
-\contentsline {subsection}{\numberline {5.2.2}Towards a Comprehensive Model of Protein Expression}{89}{subsection.5.2.2}
-\contentsline {chapter}{\numberline {A}Using Expectation-Maximization to Extract Additional Information from Quantitative Proteomics Experiments}{83}{appendix.A}
-\contentsline {chapter}{Bibliography}{87}{section*.18}
+\contentsline {subsection}{\numberline {2.2.3}Quantitative proteomics elucidates targets of autophagy}{27}{subsection.2.2.3}
+\contentsline {chapter}{\numberline {3}An integrative `omics approach to quantitative analysis of physiological metabolic flux control}{31}{chapter.3}
+\contentsline {section}{\numberline {3.1}Abstract}{31}{section.3.1}
+\contentsline {section}{\numberline {3.2}Introduction}{32}{section.3.2}
+\contentsline {section}{\numberline {3.3}Results}{35}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Systems-level metabolite and enzyme concentrations and fluxes.}{35}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Integration of concentration and flux data via SIMMER.}{39}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.3}Strategy for combining systems-level data and prior knowledge to identify physiologically relevant regulators.}{41}{subsection.3.3.3}
+\contentsline {subsection}{\numberline {3.3.4}Identification of 32 instances of physiologically meaningful yeast metabolic regulation.}{43}{subsection.3.3.4}
+\contentsline {subsection}{\numberline {3.3.5}Global analysis.}{45}{subsection.3.3.5}
+\contentsline {subsection}{\numberline {3.3.6}Assessing how metabolites and enzymes change flux.}{47}{subsection.3.3.6}
+\contentsline {section}{\numberline {3.4}Discussion}{50}{section.3.4}
+\contentsline {section}{\numberline {3.5}Supplemental Figures and Tables}{54}{section.3.5}
+\contentsline {section}{\numberline {3.6}Materials and Methods}{72}{section.3.6}
+\contentsline {chapter}{\numberline {4}Multiple Sources of Regulation Impact Nutrient-Dependent Protein Expression in Yeast}{95}{chapter.4}
+\contentsline {section}{\numberline {4.1}Introduction}{95}{section.4.1}
+\contentsline {section}{\numberline {4.2}Results}{97}{section.4.2}
+\contentsline {section}{\numberline {4.3}Discussion}{103}{section.4.3}
+\contentsline {section}{\numberline {4.4}Materials and Methods}{107}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1}Processing and aligning input data}{107}{subsection.4.4.1}
+\contentsline {subsection}{\numberline {4.4.2}Testing the correlation between protein and transcript relative abundances}{108}{subsection.4.4.2}
+\contentsline {subsection}{\numberline {4.4.3}Identifying gene sets associated with variation in proteins-per-transcript}{109}{subsection.4.4.3}
+\contentsline {chapter}{\numberline {5}Conclusion \& Future Work}{111}{chapter.5}
+\contentsline {section}{\numberline {5.1}Conclusion}{111}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Understanding the structure and regulation of metabolism}{112}{subsection.5.1.1}
+\contentsline {subsubsection}{Characterizing physiological regulation in yeast metabolism}{113}{section*.69}
+\contentsline {subsubsection}{How coordination of the metabolism and proteome leads to nutrient-dependent growth control}{114}{section*.70}
+\contentsline {subsection}{\numberline {5.1.2}Understanding how enzyme levels are regulated}{116}{subsection.5.1.2}
+\contentsline {section}{\numberline {5.2}Future Work}{117}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Achieving a quantitative understanding of metabolism}{118}{subsection.5.2.1}
+\contentsline {subsubsection}{Metabolomic incompleteness}{118}{section*.71}
+\contentsline {subsubsection}{Improving the precision of flux estimation}{119}{section*.72}
+\contentsline {subsubsection}{Mis-characterization of enzyme activity and kinetic differences between iso-enzymes}{121}{section*.74}
+\contentsline {subsubsection}{Is the ``well-mixed'' assumption appropriate?}{123}{section*.75}
+\contentsline {subsubsection}{Evaluating the veracity of modeling assumptions}{126}{section*.76}
+\contentsline {subsubsection}{Application of SLIMER using more comprehensive data, broader conditions and new organisms}{127}{section*.77}
+\contentsline {subsubsection}{Translating reaction-level kinetics into metabolism-level predictions}{128}{section*.78}
+\contentsline {subsection}{\numberline {5.2.2}Towards a comprehensive model of protein expression}{129}{subsection.5.2.2}
+\contentsline {chapter}{\numberline {A}Using Expectation-Maximization to Extract Additional Information from Quantitative Proteomics Experiments}{131}{appendix.A}
+\contentsline {chapter}{Bibliography}{135}{section*.84}

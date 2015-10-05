@@ -1,5 +1,49 @@
+\documentclass[12pt]{nature}\usepackage{graphicx, color}
+\usepackage{alltt}
+\usepackage[left=1in,top=1in,right=1in,bottom=1in,nohead]{geometry}
+\usepackage{geometry}                % See geometry.pdf to learn the layout options. There are lots.
+\geometry{a4paper}                   % ... or a4paper or a5paper or ... 
+\usepackage{wrapfig}	%in-line figures
+\usepackage[square, comma, sort&compress]{natbib}		%bibliography
+\usepackage{pslatex} 	%for times new roman
+\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{epstopdf}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{color} % for coloring of text
+\usepackage{multirow}
+\usepackage{outlines}
+\usepackage{xfrac}
+\usepackage{relsize} % for scaling parts of equations. e.g. \mathlarger
+\usepackage{hyperref}
+\usepackage{rotating}
+\usepackage{array} 
+\usepackage[ruled,vlined]{algorithm2e} % for pseudo-code
+\usepackage{xcite} % to use bibliography from main MS
+\usepackage{mathtools} %left adjust matrices 
 
-\section{Materials and Methods}
+\usepackage{etoolbox}
+
+\makeatletter
+\apptocmd{\thebibliography}{\global\c@NAT@ctr 100\relax}{}{}
+\makeatother
+
+\linespread{1} %remove for double space
+\externalcitedocument[main-]{rOCA}
+
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+
+\providecommand{\e}[1]{\ensuremath{\times 10^{#1}}}
+
+\begin{document}
+
+\newcommand{\multilineR}[1]{\begin{tabular}[b]{@{}r@{}}#1\end{tabular}}
+\newcommand{\multilineL}[1]{\begin{tabular}[b]{@{}l@{}}#1\end{tabular}}
+\newcommand{\multilineC}[1]{\begin{tabular}[b]{@{}c@{}}#1\end{tabular}}
+
+\section*{Materials and Methods}
 
 \subsection{Strains and culture conditions.} 
 
@@ -302,3 +346,36 @@ For each Markov sample and nutrient condition, one summation theorem and four co
 \end{align}
 
 
+
+
+
+%\subsection{Pathway inference and association with reaction species}
+
+%Pathways were programmatically defined by identifying subsets of the reactions which carried non-zero flux that satisfied two criteria: First, the relative flux across the 25 nutrient conditions for all reactions was perfectly correlated and secondly; using this subset of reactions, weakly connected sets of reactions were identified.  For each pathway, enzymes associated with the involved reactions and the substrate and products of these reactions were regressed on pathway flux to see if a significant association between flux carried and the reaction specie existed.  To account for non-normality of residuals, the significance of association was determined with a bootstrap approach (algorithm \ref{pwbs}).
+
+%\begin{algorithm}[H]\vspace{2mm}
+% \KwIn{Relative concentrations of one metabolite or enzyme (S) and relative flux ($\nu$) across $n$ conditions}
+% \KwOut{One p-value associating S and $\nu$ using bootstrapping}\vspace{2mm}
+ %\Begin{
+%Using least-squares regression, solve for $\alpha$ $\&$ $\beta$ in $\nu = \alpha + \beta[S] + \epsilon$\\
+%$\hat{\nu} = \alpha + \beta[S]$\\
+%$\epsilon^{c} = \epsilon * \sqrt{\sfrac{n}{n - 2}}$
+ %}
+%\For{$i \leftarrow 1$ \KwTo 10000}{
+%$\nu_{i}^{bs} = \hat{y} + \text{sample}[\epsilon^{c}]$\\
+%Using least-squares regression, solve for $\alpha_{i}^{bs}$ $\&$ $\beta_{i}^{bs}$ in $\nu_{i}^{bs} = \alpha^{bs} + \beta^{bs}[S] + \epsilon$
+%}
+%\KwRet{$p = 1 - 2\left|0.5 - \frac{\sum 1\left[\beta^{bs} > 0\right]}{10000}  \right|$}\vspace{2mm}
+%\caption{Associating pathway flux and specie abundance}
+%\label{pwbs}
+%\end{algorithm}
+
+\newpage
+
+\setcounter{enumiv}{20}
+
+\bibliographystyle{naturemag}
+\bibliography{ROCAbiblio.bib}
+
+
+\end{document} 
