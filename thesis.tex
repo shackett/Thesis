@@ -7,7 +7,7 @@
 %%% For print copies
 %% set 'singlespace' option to set entire thesis to single space, and define "\printmode" to remove all hyperlinks for printed copies of the thesis. Delete all output files before changing this mode -- it will turn hyperref package on and off
 %\documentclass[10pt,lot, lof, singlespace]{puthesis}
-\documentclass[10pt,lot, lof, doublespace]{puthesis}
+\documentclass[10pt,lot, lof]{puthesis}
 
 %\newcommand{\printmode}{}
 
@@ -110,6 +110,10 @@
 \usepackage{float}
 \usepackage[square, comma, sort&compress]{natbib}		%bibliography
 \usepackage{lscape}
+\usepackage{setspace} % for singlespacing
+
+
+
 
 \setlength{\parskip}{2mm}
 
@@ -122,6 +126,8 @@
   #2%
   \endgroup
 }
+
+%\AtBeginEnvironment{tabular}{\singlespacing}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -214,8 +220,8 @@
 %%%% Front-matter
 
 % For early drafts, you may want to disable some of the frontmatter. Simply change this to "\ifodd 1" to do so.
-%\ifodd 0
-\ifodd 1
+\ifodd 0
+%\ifodd 1
 % front-matter disabled while writing chapters
 \renewcommand{\maketitlepage}{}
 \renewcommand*{\makecopyrightpage}{}
