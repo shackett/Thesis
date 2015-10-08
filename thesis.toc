@@ -16,19 +16,19 @@
 \contentsline {subsubsection}{Quantifying the significance of tumor:benign differences}{20}{section*.17}
 \contentsline {subsubsection}{A bootstrap approach for estimating significant differences between paired samples}{21}{section*.19}
 \contentsline {subsubsection}{A metabolomic signature of protein eating in pancreatic tumors}{24}{section*.20}
-\contentsline {subsection}{\numberline {2.2.2}Genetic variation affecting metabolite concentrations in yeast }{24}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.2}Genetic variation affecting metabolite concentrations in yeast }{26}{subsection.2.2.2}
 \contentsline {subsection}{\numberline {2.2.3}Quantitative proteomics elucidates targets of autophagy}{31}{subsection.2.2.3}
-\contentsline {chapter}{\numberline {3}An Integrative `Omics Approach to Quantitative Analysis of Physiological Metabolic Flux Control}{34}{chapter.3}
-\contentsline {section}{\numberline {3.1}Introduction}{34}{section.3.1}
-\contentsline {section}{\numberline {3.2}Results}{36}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Systems-level metabolite and enzyme concentrations and fluxes.}{36}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}Integration of concentration and flux data via SIMMER.}{41}{subsection.3.2.2}
-\contentsline {subsection}{\numberline {3.2.3}Strategy for combining systems-level data and prior knowledge to identify physiologically relevant regulators.}{43}{subsection.3.2.3}
-\contentsline {subsection}{\numberline {3.2.4}Identification of 34 instances of physiologically meaningful yeast metabolic regulation.}{45}{subsection.3.2.4}
-\contentsline {subsection}{\numberline {3.2.5}Evaluating \textit {in vitro} support for predicted regulation.}{46}{subsection.3.2.5}
-\contentsline {subsection}{\numberline {3.2.6}Assessing how metabolites and enzymes change flux.}{48}{subsection.3.2.6}
-\contentsline {section}{\numberline {3.3}Discussion}{51}{section.3.3}
-\contentsline {section}{\numberline {3.4}Supplemental figures and tables}{55}{section.3.4}
+\contentsline {chapter}{\numberline {3}An Integrative `Omics Approach to Quantitative Analysis of Physiological Metabolic Flux Control}{35}{chapter.3}
+\contentsline {section}{\numberline {3.1}Introduction}{35}{section.3.1}
+\contentsline {section}{\numberline {3.2}Results}{37}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Systems-level metabolite and enzyme concentrations and fluxes.}{37}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Integration of concentration and flux data via SIMMER.}{42}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}Strategy for combining systems-level data and prior knowledge to identify physiologically relevant regulators.}{44}{subsection.3.2.3}
+\contentsline {subsection}{\numberline {3.2.4}Identification of 34 instances of physiologically meaningful yeast metabolic regulation.}{46}{subsection.3.2.4}
+\contentsline {subsection}{\numberline {3.2.5}Evaluating \textit {in vitro} support for predicted regulation.}{47}{subsection.3.2.5}
+\contentsline {subsection}{\numberline {3.2.6}Assessing how metabolites and enzymes change flux.}{49}{subsection.3.2.6}
+\contentsline {section}{\numberline {3.3}Discussion}{52}{section.3.3}
+\contentsline {section}{\numberline {3.4}Supplemental figures and tables}{56}{section.3.4}
 \contentsline {section}{\numberline {3.5}Materials and methods}{72}{section.3.5}
 \contentsline {chapter}{\numberline {4}Multiple Sources of Regulation Impact Nutrient-Dependent Protein Expression in Yeast}{98}{chapter.4}
 \contentsline {section}{\numberline {4.1}Introduction}{98}{section.4.1}
