@@ -1,8 +1,8 @@
-\chapter{An integrative `omics approach to quantitative analysis of physiological metabolic flux control\label{ch:simmer}}
+\chapter{An Integrative `Omics Approach to Quantitative Analysis of Physiological Metabolic Flux Control\label{ch:simmer}}
 
-\section{Abstract}
+%\section{Abstract}
 
-Enzyme and metabolite quantitation has been revolutionized by advances in mass spectrometry, but methods to integrate the resulting data remain needed. Here we present a quantitative, scalable strategy for revealing steady-state metabolic regulation by integration of metabolomic, proteomic, and flux measurements. It involves analyzing, on a reaction-by-reaction basis, whether fluxes across conditions are accounted for by a Michaelis-Menten relationship between enzyme, substrate, and potential regulator concentrations. We collected the required data for yeast growing at 25 different nutrients-limited steady states and applied this strategy to reveal the primary physiological flux control mechanisms for over 40 metabolic reactions, encompassing 34 instances of physiologically-relevant allosteric regulation. The identified regulation included classical feedbacks and unexpected cross-pathway connections. Quantitatively, half of flux control resided in substrate and one quarter in enzyme concentrations. For reversible reactions, the remainder resided largely in product levels, and for irreversible reactions in allosteric effectors. Thus, metabolic activity is substantially self-regulated by metabolites themselves.
+%Enzyme and metabolite quantitation has been revolutionized by advances in mass spectrometry, but methods to integrate the resulting data remain needed. Here we present a quantitative, scalable strategy for revealing steady-state metabolic regulation by integration of metabolomic, proteomic, and flux measurements. It involves analyzing, on a reaction-by-reaction basis, whether fluxes across conditions are accounted for by a Michaelis-Menten relationship between enzyme, substrate, and potential regulator concentrations. We collected the required data for yeast growing at 25 different nutrients-limited steady states and applied this strategy to reveal the primary physiological flux control mechanisms for over 40 metabolic reactions, encompassing 34 instances of physiologically-relevant allosteric regulation. The identified regulation included classical feedbacks and unexpected cross-pathway connections. Quantitatively, half of flux control resided in substrate and one quarter in enzyme concentrations. For reversible reactions, the remainder resided largely in product levels, and for irreversible reactions in allosteric effectors. Thus, metabolic activity is substantially self-regulated by metabolites themselves.
 
 \section{Introduction}
 
@@ -99,7 +99,7 @@ By balancing the inherent plausibility of each kinetic model, $Pr(Model)$, with 
 
 Metabolite affinities implied by the reaction forms agree with literature estimates \cite{Scheer:2011df}, with substrates and products varying between unsaturated and saturated on a case-by-case basis, but regulators operating at concentrations near their affinity, where the greatest tuning of flux is possible (\hyperref[fig:occupancy]{Figure \ref{fig:occupancy}}). Inferred thermodynamics are consistent with previous estimates of free energy drops across glycolysis \cite{Flamholz:2013io}, and for near-equilibrium reactions, there is an important role for metabolite concentrations shifting the ratio of forward to reverse flux across nutrient conditions (\hyperref[fig:paramaterValues]{Figure \ref{fig:paramaterValues}}).
 
-These 34 instances of regulation encompassed five instances of ``gold standard'' yeast regulation, and four regulators with strong \textit{in vitro} support in yeast, but no demonstrated physiological importance \textcolor{red}{cite cite cite cite}. In addition to yeast-specific regulation, 22 predicted regulators had never been experimentally tested in \textit{S. cerevisiae}. Before embracing the implications of these regulatory mechanisms, we first sought to test whether a subset of non-yeast regulatory predictions could be verified \textit{in vitro}.
+These 34 instances of regulation encompassed five instances of ``gold standard'' yeast regulation \cite{Jones:1982dn, Sekine:2007ej, Fraenkel:2011wp}, and four regulators with strong \textit{in vitro} support in yeast \cite{Li:1996vg, Khoo:1970wt, Majtan:2014jp, VANDERCAMMEN:1989er}, but no demonstrated physiological importance. In addition to yeast-specific regulation, 22 predicted regulators had never been experimentally tested in \textit{S. cerevisiae}. Before embracing the implications of these regulatory mechanisms, we first sought to verify a subset of non-yeast regulatory \textit{in vitro}.
 
 \begin{figure}[h!]
 \includegraphics[width = 1\textwidth]{ch-simmer/Figures/F5-performanceSummary.pdf}
@@ -107,7 +107,7 @@ These 34 instances of regulation encompassed five instances of ``gold standard''
 \label{fig:allosteryFit}
 \end{figure}
 
-\subsection{Evaluating the \textit{in vitro} support for predicted regulation.}
+\subsection{Evaluating \textit{in vitro} support for predicted regulation.}
 
 To demonstrate the utility of SIMMER for computationally-guided discovery, we chose two well-studied reactions where predicted regulation departs from canon, and for each reaction, precise molecular hypotheses were tested using \textit{in vitro} biochemistry.  Studying ATP-phosphoribosyltransferase (ATP-PRTase; HIS1), we found that the canonical inhibition by histidine was likely insufficient, because this inhibition is strongly contingent upon ATP-PRTase's product, phosphoribosyl-ATP (\hyperref[fig:atpprtase]{Figure \ref{fig:atpprtase}}). This combinatorial regulation has previously been suggested in \textit{e. coli} but we are the first to report its relevance in \textit{S. cerevisiae} \cite{DallLarsen:1976wm}.  Investigating ornithine transcarbamylase (OTCase; ARG3), an enzyme that is not commonly thought to be regulated through allostery \cite{Jones:1982dn}, our method predicts that alanine could serve as a physiological inhibitor.  Using both spectrophotometric and mass spectrometric assays, we confirmed that alanine inhibits Arg3p with a k$_{i}$ of 15 mM (\hyperref[fig:otcase]{Figure \ref{fig:otcase}}).  Given physiological concentrations, alanine, and to a lesser extent the other aliphatic amino acids, will differentially impact OTCase flux.  One implication of this regulation is that amino acid concentrations could indirectly stimulate ribosome synthesis, possibly allowing for a metabolic coordination of amino acid abundance and ribosome synthesis.
 
@@ -121,7 +121,7 @@ Calculating metabolic leverage for each of the 44 well-fit reactions, allows us 
 
 \begin{figure}[H]
 \floatbox[{\capbeside\thisfloatsetup{capbesideposition={right,top},capbesidewidth=6cm}}]{figure}[\FBwidth]
-{\caption[Flux change in response to changing concentrations of metabolites and enzymes whose impact on flux is governed by the metabolites' and enzyme's elasticity]{\fixedspaceword{Flux change in response to changing concentrations of metabolites and enzymes whose impact on flux is governed by the metabolites' and enzyme's elasticity.  The impact of a single metabolite or enzyme in driving variable flux is roughly proportional to its elasticity weighted by the standard deviation of log relative concentrations across physiological conditions (phosphate, carbon and nitrogen limitations).  For a reaction, the relative contributions of its enzymes, substrates and regulators in driving variable flux across physiological conditions can be approximated by this metabolic leverage.  \textbf{A)} Metabolic leverage can be projected onto a ternary surface where each reaction is effected by enzymes, substrates, products, and possibly regulators whose influence sums to 100\% leverage.  \textbf{B)} This metric is able to distinguish reactions that are irreversible and thus likely to be good points of regulation from more passive reversible reactions. Reactions are classified as kinetically irreversible if literature suggests that net flux only proceeds in the forward direction \cite{Heavner:2012dg}. \textbf{C)} Pie chart summary of average metabolic leverage for irreversible and reversible reactions.
+{\caption[Flux changes in response to changing concentrations of metabolites and enzymes whose impact on flux is governed by the metabolite and enzyme elasticity]{\fixedspaceword{Flux changes in response to changing concentrations of metabolites and enzymes whose impact on flux is governed by the metabolite and enzyme elasticity.  The impact of a single metabolite or enzyme in driving variable flux is roughly proportional to its elasticity weighted by the standard deviation of log relative concentrations across physiological conditions (phosphate, carbon and nitrogen limitations).  For a reaction, the relative contributions of its enzymes, substrates and regulators in driving variable flux across physiological conditions can be approximated by this metabolic leverage.  \textbf{A)} Metabolic leverage can be projected onto a ternary surface where each reaction is effected by enzymes, substrates, products, and possibly regulators whose influence sums to 100\% leverage.  \textbf{B)} This metric is able to distinguish reactions that are irreversible and thus likely to be good points of regulation from more passive reversible reactions. Reactions are classified as kinetically irreversible if literature suggests that net flux only proceeds in the forward direction \cite{Heavner:2012dg}. \textbf{C)} Pie chart summary of average metabolic leverage for irreversible and reversible reactions.
 }}\label{fig:metabolicLeverage}}
 {\includegraphics[width=\textwidth-6cm]{ch-simmer/Figures/F6-MetabolicLeverage.pdf}}
 \end{figure}
@@ -171,7 +171,7 @@ Because we have characterized a reproducible set of conditions that contain much
 
 \begin{figure}[H]
 \includegraphics[width = 0.7\textwidth]{ch-simmer/Figures/Supplement/proteinHM.pdf}
-\caption[Heatmap summarizing the variable concentration of 1187 proteins across chemostat conditions]{Heatmap summarizing the variable concentration of 1187 proteins across chemostat conditions. From the ratio of unlabelled sample peptides to matching $^{15}N$-labelled reference peptides, the abundance of each enzyme relative to a common reference was determined.  Across the 25 conditions, protein relative abundances were mean-centered, log-transformed and organized by hierarchical clustering using pearson correlation with average linkage.}
+\caption[Heatmap summarizing the variable concentration of 1,187 proteins across chemostat conditions]{Heatmap summarizing the variable concentration of 1187 proteins across chemostat conditions. From the ratio of unlabelled sample peptides to matching $^{15}N$-labelled reference peptides, the abundance of each enzyme relative to a common reference was determined.  Across the 25 conditions, protein relative abundances were mean-centered, log-transformed and organized by hierarchical clustering using pearson correlation with average linkage.}
 \label{fig:proteinHM}
 \end{figure}
 
@@ -202,6 +202,7 @@ Because we have characterized a reproducible set of conditions that contain much
 \end{table}
 \end{singlespace}
 
+\footnotesize
 \begin{singlespace}
 \begin{table}[H]
 \centering
@@ -238,7 +239,7 @@ Reaction Name & Regulation & Support \\\Xhline{2\arrayrulewidth}
 \label{tab:GS}
 \end{table}
 \end{singlespace}
-
+\normalsize
 
 \begin{figure}[H]
 \includegraphics[width = 1\textwidth]{ch-simmer/Figures/Supplement/HIStimecourse.pdf}
@@ -263,6 +264,7 @@ Reaction Name & Regulation & Support \\\Xhline{2\arrayrulewidth}
 %Excel file summarizing all supported regulation for each reaction
 %\end{table}
 
+\footnotesize
 \begin{singlespace}
 \begin{sidewaystable}
 \centering
@@ -309,11 +311,11 @@ Trehalose-phosphatase&(+) Trehalose&0&1&7 of 7&Pathological\\\hline
 \end{sidewaystable}
 \end{singlespace}
 
-\footnotesize
+\scriptsize
 \begin{singlespace}
 \begin{landscape}
 \begin{longtable}{|L{4cm} | L{7cm} || R{1.5cm} | L{7cm} | R{1.75cm}|}
-\caption[Best fitting reaction form for 44 reactions]{Best fitting reaction form for 44 reactions.}
+\caption[Best-fitting reaction form for 44 reactions]{Best fitting reaction form for 44 reactions.}
 \label{tab:all_rxn}
 \hline
 Reaction Name&Best Supported Regulation&Spearman Correlation&All Supported Regulation&\# Regulators Tested\\\Xhline{2\arrayrulewidth} 
@@ -500,10 +502,10 @@ Each internally-labelled sample was digested using trypsin and fractionated base
 Peptide identities based on fragmentation were shared between samples using an imputation technique based upon aligned retention time and shared \sfrac{m}{z}. The log$_{2}$ relative abundance of light:heavy, experimental:reference pair of peptides was determined by integrating over time-slices with a consistent distribution of isotopologues. Peptide precision $\left(\sigma^{-2}\right)$ was determined based on how the signal:noise of heavy and light peptide pairs is related to the consistency of biological replicates.  This $\sigma(log_{2}\sfrac{S}{N})$ was scaled by a peptide-specific over-dispersion calculated based upon the inconsistent relative abundances of technical replicates.  Peptides which were unmeasurable in greater than 90\% of samples were discarded.  Patterns of peptide missing values were primarily missing completely at random (MCAR) and block-specific rather than being governed by biological conditions.  The probability distribution of each protein's log$_{2}$ relative abundance was found by combining the log$_{2}$ relative abundance of peptides using gaussian integrated likelihood.  A protein with \textit{n} unambiguously matching normally-distributed peptides with relative abundance $\textbf{X}_{ic}$ and variance $\sigma^{2}_{ic}$ for a condition \textit{c} would be distributed according to (\hyperref[GIL]{Equation \ref{GIL}}).
 
 \begin{align}
-\boldsymbol{\Omega}_{c} \sim \mbox{\Large $\mathbb{N}$}\left(\mu = \frac{\sum_{i = 1}^{n}\textbf{X}_{ic}\tau_{i}}{\sum_{i = 1}^{n}\tau_{i}}, \sigma^{2} =  \left(\sum_{i = 1}^{n}\frac{1}{\sigma^{2}_{i}}\right)^{-1} \right)\label{GIL}
+\boldsymbol{\Omega}_{c} \sim \mbox{\Large $\mathbb{N}$}\left(\mu = \frac{\sum_{i = 1}^{n}\textbf{X}_{ic}\kappa_{i}}{\sum_{i = 1}^{n}\kappa_{i}}, \sigma^{2} =  \left(\sum_{i = 1}^{n}\frac{1}{\sigma^{2}_{i}}\right)^{-1} \right)\label{GIL}
 \end{align}
 
-$\tau_{z} = \prod_{i \neq z}^{n}\sigma^{2}_{i}$
+$\kappa_{z} = \prod_{i \neq z}^{n}\sigma^{2}_{i}$
 
 Having determining that patterns of missing values were MCAR, the relative abundance of proteins with no measured peptides in a condition could be determined through imputation, using knn-imputation \cite{Troyanskaya:2001uh}.  The precision of imputed proteins was set to the minimum precision when the protein was ascertained.
 

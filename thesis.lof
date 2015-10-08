@@ -1,42 +1,42 @@
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {1.1}{\ignorespaces Summary of primary thesis topics}}{7}{figure.caption.8}
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Summary of primary thesis topics}}{8}{figure.caption.8}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Schematic representation of peptide-level and metabolite-level analyses}}{11}{figure.caption.10}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Sources of variability in mass spectrometry}}{12}{figure.caption.11}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Evaluation of residual normality}}{14}{figure.caption.12}
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Relative support for tested variance models}}{15}{figure.caption.13}
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Estimating protein abundance from peptides}}{16}{figure.caption.14}
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Comparison of the log$_{2}$ abundances of unnormalized ion counts for pairs of technical replicates}}{18}{figure.caption.16}
-\contentsline {figure}{\numberline {2.7}{\ignorespaces Heatmap assessment of the relative impact of tumor biology and person-to-person variability on metabolite abundances.}}{19}{figure.caption.18}
-\contentsline {figure}{\numberline {2.8}{\ignorespaces Metabolite accumulation or depletion in pancreatic cancer}}{22}{figure.caption.21}
-\contentsline {figure}{\numberline {2.9}{\ignorespaces Transcript, protein and metabolite QTL linkages}}{24}{figure.caption.22}
-\contentsline {figure}{\numberline {2.10}{\ignorespaces Distribution of broad sense heritability (H$^{2}$) across measured metabolites}}{25}{figure.caption.23}
-\contentsline {figure}{\numberline {2.11}{\ignorespaces Fraction of broad-sense heritability explained by identified mQTLs}}{26}{figure.caption.24}
-\contentsline {figure}{\numberline {2.12}{\ignorespaces Proteomic alterations due to loss of autophagy}}{30}{figure.caption.25}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Schematic representation of peptide-level and metabolite-level analyses}}{12}{figure.caption.10}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Sources of variability in mass spectrometry}}{14}{figure.caption.11}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Evaluation of residual normality}}{16}{figure.caption.12}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Relative support for tested variance models}}{17}{figure.caption.13}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Estimating protein abundance from peptides}}{18}{figure.caption.14}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Comparison of the log$_{2}$ abundances of unnormalized ion counts for pairs of technical replicates}}{20}{figure.caption.16}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Heatmap assessment of the relative impact of tumor biology and person-to-person variability on metabolite abundances.}}{22}{figure.caption.18}
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Metabolite accumulation or depletion in pancreatic cancer}}{25}{figure.caption.21}
+\contentsline {figure}{\numberline {2.9}{\ignorespaces Transcript, protein and metabolite QTL linkages}}{27}{figure.caption.22}
+\contentsline {figure}{\numberline {2.10}{\ignorespaces Distribution of broad sense heritability (H$^{2}$) across measured metabolites}}{28}{figure.caption.23}
+\contentsline {figure}{\numberline {2.11}{\ignorespaces Fraction of broad-sense heritability explained by identified mQTLs}}{29}{figure.caption.24}
+\contentsline {figure}{\numberline {2.12}{\ignorespaces Proteomic alterations due to loss of autophagy}}{33}{figure.caption.25}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces We can infer \textit {in vivo} reaction kinetics if we have measured the reaction's rate and concentrations of enzymes and all relevant substrates, products and effectors}}{34}{figure.caption.26}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Summary of input data}}{38}{figure.caption.27}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Michaelis-Menten kinetics is sufficient to relate substrate, product and enzyme concentrations to flux carried for the reaction triose-phosphate isomerase}}{40}{figure.caption.28}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Two models of PRPP Amidotransferase (PPAT) kinetics are compared: reversible Michaelis-Menten kinetics with and without allosteric inhibition by AMP}}{41}{figure.caption.29}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Metabolism-wide summary of the consistency between measured flux and Michaelis-Menten predictions}}{45}{figure.caption.30}
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Flux change in response to changing concentrations of metabolites and enzymes whose impact on flux is governed by the metabolites' and enzyme's elasticity}}{48}{figure.caption.31}
-\contentsline {figure}{\numberline {3.S1}{\ignorespaces Summary of experimentally-determined rates of metabolite uptake, excretion and incorporation into biomass for each chemostat condition}}{53}{figure.caption.32}
-\contentsline {figure}{\numberline {3.S2}{\ignorespaces Heatmap summarizing relative flux through 233 reactions across chemostat conditions}}{54}{figure.caption.33}
-\contentsline {figure}{\numberline {3.S3}{\ignorespaces Nutrient-induced changes in peptide abundance between technical replicates are highly reproducible}}{55}{figure.caption.34}
-\contentsline {figure}{\numberline {3.S4}{\ignorespaces Heatmap summarizing the variable concentration of 1187 proteins across chemostat conditions}}{56}{figure.caption.35}
-\contentsline {figure}{\numberline {3.S5}{\ignorespaces Inhibition of His1p by histidine is contingent upon the reaction product, phosphoribosyl-ATP}}{59}{figure.caption.38}
-\contentsline {figure}{\numberline {3.S6}{\ignorespaces Alanine is a physiological regulator of ornithine carbamoyltransferase}}{60}{figure.caption.39}
-\contentsline {figure}{\numberline {3.S7}{\ignorespaces Using optimal regulators to investigate the regulation of understudied reactions}}{61}{figure.caption.40}
-\contentsline {figure}{\numberline {3.S8}{\ignorespaces Predicted metabolite affinities are consistent with literature reports and reveal different trends in occupancy for substrates, products and regulators}}{65}{figure.caption.42}
-\contentsline {figure}{\numberline {3.S9}{\ignorespaces Predicted reaction thermodynamics are consistent with reported literature}}{66}{figure.caption.43}
-\contentsline {figure}{\numberline {3.S10}{\ignorespaces Summary of substrates, products, enzymes and regulator metabolic leverage}}{67}{figure.caption.44}
-\contentsline {figure}{\numberline {3.S11}{\ignorespaces Projecting metabolic leverage onto a metabolic network highlights the major regulatory control points that our method is able to reproduce and discover.\relax }}{68}{figure.caption.45}
-\contentsline {figure}{\numberline {3.S12}{\ignorespaces Two metabolic control analysis based models of glycolysis were created, one contains the feed-forward activation of pyruvate kinase by fructose 1,6-bisphosphate and an alternative model lacked this regulation}}{69}{figure.caption.46}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces We can infer \textit {in vivo} reaction kinetics if we have measured the reaction's rate and concentrations of enzymes and all relevant substrates, products and effectors}}{37}{figure.caption.26}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Summary of input data}}{40}{figure.caption.27}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Michaelis-Menten kinetics is sufficient to relate substrate, product and enzyme concentrations to flux carried for the reaction triose-phosphate isomerase}}{42}{figure.caption.28}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Two models of PRPP Amidotransferase (PPAT) kinetics are compared: reversible Michaelis-Menten kinetics with and without allosteric inhibition by AMP}}{43}{figure.caption.29}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Metabolism-wide summary of the consistency between measured flux and Michaelis-Menten predictions}}{47}{figure.caption.30}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Flux changes in response to changing concentrations of metabolites and enzymes whose impact on flux is governed by the metabolite and enzyme elasticity}}{50}{figure.caption.31}
+\contentsline {figure}{\numberline {3.S1}{\ignorespaces Summary of experimentally-determined rates of metabolite uptake, excretion and incorporation into biomass for each chemostat condition}}{55}{figure.caption.32}
+\contentsline {figure}{\numberline {3.S2}{\ignorespaces Heatmap summarizing relative flux through 233 reactions across chemostat conditions}}{56}{figure.caption.33}
+\contentsline {figure}{\numberline {3.S3}{\ignorespaces Nutrient-induced changes in peptide abundance between technical replicates are highly reproducible}}{57}{figure.caption.34}
+\contentsline {figure}{\numberline {3.S4}{\ignorespaces Heatmap summarizing the variable concentration of 1,187 proteins across chemostat conditions}}{58}{figure.caption.35}
+\contentsline {figure}{\numberline {3.S5}{\ignorespaces Inhibition of His1p by histidine is contingent upon the reaction product, phosphoribosyl-ATP}}{61}{figure.caption.38}
+\contentsline {figure}{\numberline {3.S6}{\ignorespaces Alanine is a physiological regulator of ornithine carbamoyltransferase}}{62}{figure.caption.39}
+\contentsline {figure}{\numberline {3.S7}{\ignorespaces Using optimal regulators to investigate the regulation of understudied reactions}}{63}{figure.caption.40}
+\contentsline {figure}{\numberline {3.S8}{\ignorespaces Predicted metabolite affinities are consistent with literature reports and reveal different trends in occupancy for substrates, products and regulators}}{67}{figure.caption.42}
+\contentsline {figure}{\numberline {3.S9}{\ignorespaces Predicted reaction thermodynamics are consistent with reported literature}}{68}{figure.caption.43}
+\contentsline {figure}{\numberline {3.S10}{\ignorespaces Summary of substrates, products, enzymes and regulator metabolic leverage}}{69}{figure.caption.44}
+\contentsline {figure}{\numberline {3.S11}{\ignorespaces Projecting metabolic leverage onto a metabolic network highlights the major regulatory control points that our method is able to reproduce and discover.\relax }}{70}{figure.caption.45}
+\contentsline {figure}{\numberline {3.S12}{\ignorespaces Two metabolic control analysis based models of glycolysis were created, one contains the feed-forward activation of pyruvate kinase by fructose 1,6-bisphosphate and an alternative model lacked this regulation}}{71}{figure.caption.46}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Correlation of protein and transcript relative abundance}}{96}{figure.caption.66}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Protein and transcript relative abundance and implied proteins-per-transcript are each strongly influenced by growth rate and limiting nutrient}}{98}{figure.caption.67}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces GO terms affecting protein expression and proteins-per-transcript}}{99}{figure.caption.68}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Characterizing 20 clusters of genes based on variation in proteins-per-transcripts across conditions}}{101}{figure.caption.69}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Correlation of protein and transcript relative abundance}}{103}{figure.caption.66}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Protein and transcript relative abundance and implied proteins-per-transcript are each strongly influenced by growth rate and limiting nutrient}}{105}{figure.caption.67}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces GO terms affecting protein expression and proteins-per-transcript}}{106}{figure.caption.68}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Characterizing 20 clusters of genes based on variation in proteins-per-transcripts across conditions}}{108}{figure.caption.69}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Procedure for accounting for flux uncertainty}}{118}{figure.caption.74}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Procedure for accounting for flux uncertainty}}{128}{figure.caption.77}
 \addvspace {10\p@ }
